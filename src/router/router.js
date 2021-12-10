@@ -1,7 +1,7 @@
 import App from "../App";
-// import paths from "./paths";
-// import FirstDirect from "../app/FirstDirect/FirstDirect";
-// import infoContainer from "../app/information/infoContainer";
+import paths from "./paths";
+import FirstDirect from "../app/FirstDirect/FirstDirect";
+import infoContainer from "../app/information/infoContainer";
 // import loginContainer from "../app/login/LoginContainer";
 // import DefaultContainer from "../app/DefaultContainer";
 // import registerContainer from "../app/register/RegisterContainer";
@@ -21,16 +21,16 @@ const router = [
     {
         component: App,
         routes: [
-            // {
-            //     path: paths.FirstDirect,
-            //     exact: true,
-            //     component: FirstDirect
-            // },
-            // {
-            //     path: paths.Information,
-            //     exact: true,
-            //     component: infoContainer
-            // },
+            {
+                path: paths.FirstDirect,
+                exact: true,
+                component: FirstDirect
+            },
+            {
+                path: paths.Information,
+                exact: true,
+                component: infoContainer
+            },
             // {
             //     path: paths.Login,
             //     exact: true,

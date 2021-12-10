@@ -1,0 +1,77 @@
+.footer {
+    padding-bottom: 60px;
+}
+
+.line {
+    width: 100%;
+    display: block;
+    border: 1px solid #b1637d;
+    color: #fff;
+    margin: 0 0 20px 0;
+}
+
+.download-apps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.download-link {
+    display: block;
+}
+
+#download-img-appstore {
+    height: 45px;
+}
+
+#download-img-googleplay {
+    height: 67.5px;
+}
+
+.category {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.category-title {
+    color: #000;
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.category-item {
+    margin: 15px 0;
+}
+
+.category-item-link {
+    text-decoration: none;
+    color: #535351;
+    font-size: 16px;
+}
+
+.category-item-link:hover {
+    color: #000;
+    font-weight: 500;
+}
+
+@media (min-width: 960px) {
+    
+    .container-column {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 959px) {
+    
+    .container-columns {
+        display: flex;
+        justify-content: center;
+    }
+
+    .category {
+        margin-left: 70px;
+    }
+}
