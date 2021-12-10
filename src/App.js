@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import AppContext from "./AppContext";
+import { renderRoutes } from "react-router-config";
+import { getLocalStorage, setLocalStorage } from "./services/storage/LocalStorage";
 
-function App() {
+function App({ route }) {
+  const [user, setUser] = useState(JSON.parse(getLocalStorage("user")) || {})
+  const updateUser = (value) => {
+    setLocalStorage("user", value)
+    setUser(value)
+  }
+  const [loading, setLoading] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <AppContext.Provider value={{
+        user,
+        setUser: updateUser,
+        loading,
+        setLoading
+      }}>
+        <div className="App">
+          {renderRoutes(route.routes)}
+        </div>
+      </AppContext.Provider>
+  )
 }
 
 export default App;
