@@ -1,8 +1,8 @@
-
 import "./FirstDirect.scss"
 import Footer from "../homepage/Footer"
 import { Spring, animated } from 'react-spring'
 import paths from "../../router/paths";
+import { MenuOutlined } from '@ant-design/icons';
 
 const FirstDirect = () => {
 
@@ -19,6 +19,21 @@ const FirstDirect = () => {
             counter = 1;
         }
     }, 3000);
+
+    const clickMenu = () => {
+        let menu = document.getElementById('basePage-menu');
+        let style = window.getComputedStyle(menu)
+        let isClose = style.getPropertyValue('overflow')
+        console.log("ndh", typeof style.getPropertyValue('overflow'))
+
+        if (isClose === "hidden") {
+            console.log("YES")
+            menu.style.removeProperty('overflow');
+        } else {
+            console.log("NO")
+            menu.style.overflow = 'hidden';
+        }
+    }
 
     return (
         <div>
@@ -44,7 +59,12 @@ const FirstDirect = () => {
                             </div>
                         </div>
 
-                        <div className="basePage__header--menu-list">
+                        <div id="basePage-menu" className="basePage__header--menu-list">
+
+                            <div className="basePage__header--menu-icon" onClick={() => clickMenu()}>
+                                <MenuOutlined className="header__navbar-menu-icon-btn" />
+                            </div>
+
                             <ul className="basePage__header--menu-list-items1">
                                 <li className="basePage__header--menu-list-items1-field">
                                     <a href="/login" className="basePage__header--menu-list-items1-field-link">Sản phẩm</a>
@@ -68,13 +88,14 @@ const FirstDirect = () => {
                                     <a href="/info" className="basePage__header--menu-list-items2-direct-link">Thông tin</a>
                                 </li>
                             </ul>
+
                         </div>
 
                     </div>
 
                     <div className="basePage__header--background col-12">
                         <div className="basePage__header--background-img">
-                            <h1 className="basePage__header--background-img-slogan1">Hãy để đồ bỏ đi về với nơi cần chúng</h1>
+                            <h1 className="basePage__header--background-img-slogan1">Đừng vứt bỏ. Hãy để đồ cũ tìm chủ mới</h1>
                             <h6 className="basePage__header--background-img-slogan2">Không ngừng vươn lên - Cho cuộc sống mãi xanh</h6>
                             <form className="form-inline basePage__header--background-img-search" onSubmit={(e) => onSearch(e)}>
                                 <input className="basePage__header--background-img-search-input" type="search" placeholder="Tìm kiếm ở đây"
@@ -108,12 +129,12 @@ const FirstDirect = () => {
                                     <div class="basePage__container--slider-slides-slide-4" />
                                 </div>
 
-                                <div class="basePage__container--slider-slides-navigation">
-                                    <div class="basePage__container--slider-slides-navigation-btn1" />
-                                    <div class="basePage__container--slider-slides-navigation-btn2" />
-                                    <div class="basePage__container--slider-slides-navigation-btn3" />
-                                    <div class="basePage__container--slider-slides-navigation-btn4" />
-                                </div>
+                                {/*<div class="basePage__container--slider-slides-navigation">*/}
+                                {/*    <div class="basePage__container--slider-slides-navigation-btn1" />*/}
+                                {/*    <div class="basePage__container--slider-slides-navigation-btn2" />*/}
+                                {/*    <div class="basePage__container--slider-slides-navigation-btn3" />*/}
+                                {/*    <div class="basePage__container--slider-slides-navigation-btn4" />*/}
+                                {/*</div>*/}
                             </div>
                         </div>
                         <div class="basePage__container--slider-image col-xl-4 col-12">
