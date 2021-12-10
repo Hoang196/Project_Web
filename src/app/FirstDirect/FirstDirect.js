@@ -76,12 +76,10 @@ const FirstDirect = () => {
                         <div className="basePage__header--background-img">
                             <h1 className="basePage__header--background-img-slogan1">Hãy để đồ bỏ đi về với nơi cần chúng</h1>
                             <h6 className="basePage__header--background-img-slogan2">Không ngừng vươn lên - Cho cuộc sống mãi xanh</h6>
-                            <form className="form-inline basePage__header--background-img-search">
+                            <form className="form-inline basePage__header--background-img-search" onSubmit={(e) => onSearch(e)}>
                                 <input className="basePage__header--background-img-search-input" type="search" placeholder="Tìm kiếm ở đây"
-                                       aria-label="Search" onSubmit={(e) => onSearch(e)}/>
-                                <button className="basePage__header--background-img-search-btn" type="submit"
-                                        onSubmit={(e) => onSearch(e)}>Tìm kiếm
-                                </button>
+                                       aria-label="Search"/>
+                                <button className="basePage__header--background-img-search-btn" type="submit" >Tìm kiếm</button>
                             </form>
                         </div>
                     </div>
