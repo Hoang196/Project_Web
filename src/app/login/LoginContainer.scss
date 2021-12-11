@@ -1,0 +1,153 @@
+.login__page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__page { 
+  min-height: 100vh;
+}
+.login-form {
+  margin: 0;
+  background-color: #f9f9fc;
+  border-radius: 8px;
+  box-shadow: 0 0 13px 0 ;
+
+  .button {
+    background-color: #fff;
+    color: #000;
+    border-radius: 2px;
+    border: 0.5px solid #ccc;
+  }
+  .button:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+.login {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 31px 0;
+
+  &-box {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+
+    &-google {
+      display: flex;
+      background-color: #fff;
+      padding: 7px 50px;
+      border: 0.5px solid #ccc;
+
+      &-logo {
+        background: url(../../images/google-icon.jpg) top center / cover no-repeat;
+        height: 22px;
+        width: 22px;
+        margin-top: 3px;
+        margin-right: 8px;
+      }
+      &-label {
+        font-size: 17px;
+        font-weight: 500;
+        color: #555;
+      }
+    }
+
+    &-google:hover {
+      cursor: pointer;
+      box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    &-facebook {
+      display: flex;
+      background-color: #fff;
+      padding: 7px 41.5px;
+      border: 0.5px solid #ccc;
+
+      &-logo {
+        background: url(../../images/facebook-icon.jpg) top center / cover no-repeat;
+        height: 22px;
+        width: 22px;
+        margin-top: 3px;
+        margin-right: 8px;
+      }
+      &-label {
+        font-size: 17px;
+        font-weight: 500;
+        color: #555;
+      }
+    }
+
+    &-facebook:hover {
+      cursor: pointer;
+      box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    }
+  }
+}
+
+.login__footer {
+  text-align: center;
+  padding: 6px 0 8px 0;
+  font-size: 15px;
+}
+
+@media (min-width: 1140px) {
+  .login__page { 
+    background: url(../../images/bgr.jpg) top center / cover no-repeat;
+  }
+  .login-form {
+    padding: 2rem;
+    width: 500px;
+
+    .button {
+      padding: 6px 40px;
+      margin-left: 28px;
+    }
+  }
+}
+
+@media (min-width: 740px) and (max-width: 1139px){
+  .login__page { 
+    background: url(../../images/bgr11.jpg) top center / cover no-repeat;
+  }
+  .login-form {
+    padding: 2rem;
+    width: 500px;
+
+    .button {
+      padding: 6px 40px;
+      margin-left: 24px;
+    }
+  }
+}
+
+@media (max-width: 739px) {
+  .login__page { 
+    background: url(../../images/bgr11.jpg) top center / cover no-repeat;
+    overflow: hidden;
+  }
+  .login-form {
+    padding: 1.5rem;
+    width: 350px;
+
+    .button {
+      padding: 6px 38px;
+    }
+  }
+  .login {
+    display: block;
+
+    &-box {
+      margin-bottom: 12px;
+
+      &-google {
+        padding: 7px 80px;
+      }
+
+      &-facebook {
+        padding: 7px 71.5px;
+      }
+    }
+  }
+}

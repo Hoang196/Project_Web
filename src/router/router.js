@@ -2,9 +2,9 @@ import App from "../App";
 import paths from "./paths";
 import FirstDirect from "../app/FirstDirect/FirstDirect";
 import infoContainer from "../app/information/infoContainer";
-// import loginContainer from "../app/login/LoginContainer";
+import LoginContainer from "../app/login/LoginContainer";
+import RegisterContainer from "../app/register/RegisterContainer";
 // import DefaultContainer from "../app/DefaultContainer";
-// import registerContainer from "../app/register/RegisterContainer";
 // import UserListContainer from "../app/userList/UserListContainer";
 // import HomePageContainer from "../app/homepage/HomePageContainer";
 // import ProductContainer from "../app/products/ProductContainer";
@@ -31,16 +31,16 @@ const router = [
                 exact: true,
                 component: infoContainer
             },
-            // {
-            //     path: paths.Login,
-            //     exact: true,
-            //     component: loginContainer
-            // },
-            // {
-            //     path: paths.Register,
-            //     exact: true,
-            //     component: registerContainer
-            // },
+            {
+                path: paths.Login,
+                exact: true,
+                component: LoginContainer
+            },
+            {
+                path: paths.Register,
+                exact: true,
+                component: RegisterContainer
+            },
             // {
             //     path: paths.Admin,
             //     component: AdminContainer,
