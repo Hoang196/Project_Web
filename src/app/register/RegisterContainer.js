@@ -72,7 +72,7 @@ const RegisterForm = () => {
                         </div>
 
                         <div className="register-form-group">
-                            <label htmlFor="name" className="register-form-label">Tên</label>
+                            <label htmlFor="name" className="register-form-label">Tên người dùng</label>
                             <input id="name" name="name" type="name" placeholder="VD: HoangCosNY"
                                 className="register-form-control" />
                             <span className="register-form-message" />
