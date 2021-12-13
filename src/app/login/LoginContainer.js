@@ -41,7 +41,7 @@ const LoginContainer = () => {
     }
 
     const SignInWithGoogle = () => {
-        var google_provider = new firebase.auth.GoogleAuthProvider();
+        let google_provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(google_provider)
             .then((re) => {
                 const newUser = re.additionalUserInfo.profile;
@@ -65,7 +65,7 @@ const LoginContainer = () => {
     }
 
     const SignInWithFacebook = () => {
-        var facebook_provider = new firebase.auth.FacebookAuthProvider();
+        let facebook_provider = new firebase.auth.FacebookAuthProvider();
         firebase.auth().signInWithPopup(facebook_provider)
             .then((re) => {
                 console.log("ndhh", re)
@@ -118,91 +118,49 @@ const LoginContainer = () => {
 
     return (
         <div className="login__page container-fluid">
-            <div className={"login-form"}>
-                <div className={"title"}>
-                    <p style={{ fontSize: "25px", fontWeight: "600", color: "red" }} >
-                        Đăng nhập
-                    </p>
-                </div>
-                <div className={"content"}>
-                    <Form
-                        name="basic"
-                        labelCol={{
-                            span: 5,
-                        }}
-                        wrapperCol={{
-                            span: 20,
-                        }}
-                        initialValues={{
-                            remember: true,
-                        }}
-                        onFinish={onSubmit}
-                    >
-                        <Form.Item
-                            label="Email"
-                            name="email"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your username!',
-                                },
-                            ]}
-                        >
-                            <Input />
-                        </Form.Item>
+            <div className={"login__page--container"}>
+                <div className="login-main">
+                    <form className="login-form">
+                        <h3 className="login-heading">Thành viên đăng nhập</h3>
+                        <p className="login-desc">Chào mừng bạn đến với cộng đồng đồ cũ</p>
 
-                        <Form.Item
-                            label="Mật khẩu"
-                            name="password"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your password!',
-                                },
-                            ]}
-                        >
-                            <Input.Password />
-                        </Form.Item>
+                        <div className="login-spacer"/>
 
-                        <Form.Item
-                            name="remember"
-                            valuePropName="checked"
-                            wrapperCol={{
-                                offset: 5,
-                                span: 20,
-                            }}
-                        >
-                            <Checkbox>Nhớ tài khoản</Checkbox>
-                        </Form.Item>
+                        <div className="login-form-group">
+                            <label htmlFor="email" className="login-form-label">Email</label>
+                            <input id="email" name="email" type="text" placeholder="VD: 19020303@vnu.edu.vn"
+                                   className="login-form-control"/>
+                                <span className="login-form-message"/>
+                        </div>
 
-                        <Form.Item
-                            wrapperCol={{
-                                offset: 6,
-                                span: 16,
-                            }}
-                        >
-                            <Button className={"button"} loading={loading} type="primary" htmlType="submit" size="large">
-                                Đăng nhập
-                            </Button>
-                        </Form.Item>
-                    </Form>
+                        <div className="login-form-group">
+                            <label htmlFor="password" className="login-form-label">Mật khẩu</label>
+                            <input id="password" name="password" type="password" placeholder="Nhập mật khẩu"
+                                   className="login-form-control"/>
+                                <span className="login-form-message"/>
+                        </div>
+
+                        <a className="login-form-changePass" href={"/login"} onClick={() => { alert("Tính năng đang được bảo trì") }}>Quên mật khẩu?</a>
+
+                        <button className="login-form-submit">Đăng nhập</button>
+                    </form>
                 </div>
                 <div style={{ display: "flex" }}>
-                    <hr style={{ width: "100%" }} />
+                    <hr style={{ width: "100%", marginTop: "15px" }} />
                     <p style={{ margin: "0 5px", fontSize: "17px", color: "#9b9b9bFF", fontWeight: "400" }} >hoặc</p>
-                    <hr style={{ width: "100%" }} />
+                    <hr style={{ width: "100%", marginTop: "15px" }} />
                 </div>
 
                 <div className="login row">
                     <div className="login-box">
                         <div className="login-box-google" onClick={SignInWithGoogle}>
-                            <div className="login-box-google-logo"></div>
+                            <div className="login-box-google-logo"/>
                             <div className="login-box-google-label">Google</div>
                         </div>
                     </div>
                     <div className="login-box">
                         <div className="login-box-facebook" onClick={SignInWithFacebook}>
-                            <div className="login-box-facebook-logo"></div>
+                            <div className="login-box-facebook-logo"/>
                             <div className="login-box-facebook-label">Facebook</div>
                         </div>
                     </div>
@@ -210,8 +168,7 @@ const LoginContainer = () => {
 
                 <hr />
                 <div className={"login__footer"}>
-                    Bạn chưa có tài khoản? <a href={"/register"}>Đăng ký ngay</a> <br />
-                    <a href={"/login"} onClick={() => { alert("Tính năng đang được bảo trì") }}>Quên mật khẩu?</a>
+                    Bạn chưa có tài khoản? <a className="login-form-font" href={"/register"}>Đăng ký ngay</a>
                 </div>
             </div>
         </div>

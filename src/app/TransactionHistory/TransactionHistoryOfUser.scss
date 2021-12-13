@@ -1,0 +1,35 @@
+.trans-his-container{
+  margin-top: 30px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  .trans-his-content{
+    margin-top: 30px;
+    border: 0.05px solid rgb(223, 227, 232);
+  }
+}
+
+@media (min-width: 1200px) {
+  .trans-his-content-mobile {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 740px) and (max-width: 1199px){
+  .trans-his-container{
+    margin-top: 10px;
+  }
+  .trans-his-content-mobile {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 739px) {
+  .trans-his-container{
+    margin-top: 10px;
+  }
+  .trans-his-content-mobile {
+    font-size: 2.7px;
+  }
+}

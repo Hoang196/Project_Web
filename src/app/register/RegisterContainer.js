@@ -34,122 +34,56 @@ const RegisterForm = () => {
 
     return (
         <div className="register__page container-fluid">
-            <div className={"register-form"}>
-                <div>
-                    <p style={{ fontSize: "25px", fontWeight: "600", color: "red" }}>
-                        Đăng ký
-                    </p>
+            <div className={"register__page--container"}>
+                <div className="register-main">
+                    <form className="register-form">
+                        <h3 className="register-heading">Thành viên đăng ký</h3>
+                        <p className="register-desc">Chào mừng bạn đến với cộng đồng đồ cũ</p>
+
+                        <div className="register-spacer" />
+
+                        <div className="register-form-group">
+                            <label htmlFor="email" className="register-form-label">Email</label>
+                            <input id="email" name="email" type="text" placeholder="VD: 19020303@vnu.edu.vn"
+                                className="register-form-control" />
+                            <span className="register-form-message" />
+                        </div>
+
+                        <div className="register-form-group">
+                            <label htmlFor="email" className="register-form-label">Tên</label>
+                            <input id="email" name="email" type="text" placeholder="VD: HoangCosNY"
+                                className="register-form-control" />
+                            <span className="register-form-message" />
+                        </div>
+
+                        <div className="register-form-group">
+                            <label htmlFor="email" className="register-form-label">Số điện thoại</label>
+                            <input id="email" name="email" type="text" placeholder="VD: 0123456789"
+                                className="register-form-control" />
+                            <span className="register-form-message" />
+                        </div>
+
+                        <div className="register-form-group">
+                            <label htmlFor="email" className="register-form-label">Mật khẩu</label>
+                            <input id="email" name="email" type="text" placeholder="Cần có ít nhất 6 kí tự"
+                                className="register-form-control" />
+                            <span className="register-form-message" />
+                        </div>
+
+                        <div className="register-form-group">
+                            <label htmlFor="password" className="register-form-label">Nhập lại mật khẩu</label>
+                            <input id="password" name="password" type="password" placeholder="Nhập lại mật khẩu"
+                                className="register-form-control" />
+                            <span className="register-form-message" />
+                        </div>
+
+                        <button className="register-form-submit">Đăng ký</button>
+                    </form>
                 </div>
-                <div>
-                    <Form
-                        name="basic"
-                        labelCol={{
-                            span: 7,
-                        }}
-                        wrapperCol={{
-                            span: 20,
-                        }}
-                        initialValues={{
-                            remember: true,
-                        }}
-                        onFinish={onSubmit}
-                    // onFinishFailed={onFinishFailed}
-                    >
-                        <Form.Item
-                            label="Email"
-                            name="email"
-                            rules={[
-                                {
-                                    required: true,
-                                    type: "email",
-                                    message: 'Please input your email!',
-                                },
-                            ]}
-                        >
-                            <Input />
-                        </Form.Item>
 
-                        <Form.Item
-                            label="Tên sử dụng"
-                            name="username"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your username!',
-                                },
-                            ]}
-                        >
-                            <Input />
-                        </Form.Item>
-
-                        <Form.Item
-                            label="Mật khẩu"
-                            name="password"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your password!',
-                                },
-                            ]}
-                        >
-                            <Input.Password />
-                        </Form.Item>
-
-                        <Form.Item
-                            label="Số điện thoại"
-                            name="phone_number"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your phone number!',
-                                },
-                            ]}
-                        >
-                            <Input />
-                        </Form.Item>
-
-                        <Form.Item
-                            name="gender"
-                            label="Giới tính"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please select your gender!',
-                                },
-                            ]}
-                        >
-                            <Select
-                                placeholder="Select a option gender"
-                                allowClear
-                            >
-                                <Select.Option value="male">male</Select.Option>
-                                <Select.Option value="female">female</Select.Option>
-                                <Select.Option value="other">other</Select.Option>
-                            </Select>
-                        </Form.Item>
-
-                        <Form.Item
-                            label="Ngày sinh"
-                            name="dob"
-                        >
-                            <DatePicker size="large" picker="date" className={"register-form-dob"} />
-                        </Form.Item>
-
-                        <Form.Item
-                            wrapperCol={{
-                                offset: 7,
-                                span: 16,
-                            }}
-                        >
-                            <Button className="button" loading={loading} type="primary" htmlType="submit" size="default">
-                                Đăng ký
-                            </Button>
-                        </Form.Item>
-                    </Form>
-                </div>
                 <hr />
                 <div className={"register__footer"}>
-                    Bạn đã có tài khoản? <a href={"/login"}>Đăng nhập</a>
+                    Bạn đã có tài khoản? <a className="register-form-font" href={"/login"}>Đăng nhập ngay</a>
                 </div>
             </div>
         </div>

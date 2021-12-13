@@ -49,8 +49,8 @@ const FirstDirect = () => {
                                     loop
                                     from={{ opacity: 0, color: '#000' }}
                                     to={[
-                                        { opacity: 1, color: 'red' },
-                                        { opacity: 0, color: 'orange' },
+                                        { opacity: 1, color: '#141170' },
+                                        { opacity: 0, color: '#340ff2' },
                                     ]}>
                                     {styles => (
                                         <animated.div style={styles}>Trao đổi đồ cũ</animated.div>
@@ -67,25 +67,23 @@ const FirstDirect = () => {
 
                             <ul className="basePage__header--menu-list-items1">
                                 <li className="basePage__header--menu-list-items1-field">
-                                    <a href="/login" className="basePage__header--menu-list-items1-field-link">Sản phẩm</a>
+                                    <a href="/login" className="basePage__header--menu-list-items1-field-link">Trang chủ</a>
                                 </li>
                                 <li className="basePage__header--menu-list-items1-field">
-                                    <a href="/login" className="basePage__header--menu-list-items1-field-link">Người dùng</a>
+                                    <a href="/info" className="basePage__header--menu-list-items1-field-link">Giới thiệu</a>
                                 </li>
                                 <li className="basePage__header--menu-list-items1-field">
-                                    <a href="/login" className="basePage__header--menu-list-items1-field-link">Giao dịch</a>
+                                    <a href="/login" className="basePage__header--menu-list-items1-field-link">Liên hệ</a>
                                 </li>
                             </ul>
 
                             <ul className="basePage__header--menu-list-items2">
+                                <div className="basePage__header--menu-list-items2-avatar"/>
                                 <li className="basePage__header--menu-list-items2-direct direct--slug">
                                     <a href="/register" className="basePage__header--menu-list-items2-direct-link">Đăng ký</a>
                                 </li>
-                                <li className="basePage__header--menu-list-items2-direct direct--slug">
-                                    <a href="/login" className="basePage__header--menu-list-items2-direct-link">Đăng nhập</a>
-                                </li>
                                 <li className="basePage__header--menu-list-items2-direct">
-                                    <a href="/info" className="basePage__header--menu-list-items2-direct-link">Thông tin</a>
+                                    <a href="/login" className="basePage__header--menu-list-items2-direct-link">Đăng nhập</a>
                                 </li>
                             </ul>
 

@@ -1,0 +1,132 @@
+
+.adminPage {
+  // padding: 15px;
+  margin: 0;
+  display: flex;
+  background-color: #eaedf0;
+  border-bottom: 1px solid #ccc;
+}
+
+.admin__navbar {
+  background-color: #fff;
+  margin: 15px 0 30px 0;
+  padding: 1px;
+  border: 0.5px solid #ccc;
+
+  &--menu {
+    list-style: none;
+    padding: 0;
+    
+    &-logo {
+      border-bottom: 0.5px solid #ccc;
+      margin-bottom: 10px;
+
+      &-img {
+        background: url(../../images/logo2.png) top center / cover no-repeat;
+        height: 120px;
+        width: 120px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    li {
+      padding: 0;
+      color: #000;
+    }
+
+    li:hover > a{
+      background-color: #2FBE8E;
+      color: #fff;
+    }
+
+    &-link {
+      display: inline-block;
+      width: 100%;
+      text-transform: uppercase;
+      color: #000;
+      line-height: 48px;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 0;
+    }
+  }
+}
+
+.admin__content {
+  padding-bottom: 30px;
+}
+  
+.admin_active {
+  background-color: #01B075;
+  color: #fff;
+  
+  .admin__navbar--menu-link {
+    color: #fff;
+  }
+}
+  
+  
+@media (min-width: 1200px) {
+  .admin__navbar {
+
+    &--menu {
+  
+      &-icon {
+        display: none;
+      }
+
+      li {
+        text-align: center;
+      }
+  
+    }
+  }
+}
+  
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+  
+@media (max-width: 1199px) {
+  .admin__navbar {
+    overflow: hidden;
+
+    &--search {
+      display: none;
+    }
+
+    &--menu {
+      display: block;
+      padding: 0;
+  
+      li > a {
+        padding-left: 26px;
+      }
+
+      li > span:first-child {
+        padding-left: 26px;
+        text-transform: uppercase;
+      }
+
+      &-list {
+        // position: initial;
+        z-index: 10;
+      }
+
+      &-icon {
+        padding: 0;
+        height: 48px;
+        width: 100%;
+        background-color: rgb(202, 198, 198);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-icon:hover {
+        background-color: red;
+      }
+
+    }
+  }
+  
+}

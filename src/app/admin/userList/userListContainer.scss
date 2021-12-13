@@ -1,0 +1,60 @@
+.userAdmin__base {
+  width: 100%;
+  border-radius: 5px;
+  background: #fff;
+  padding: 20px 15px;
+  border: 0.5px solid #ccc;
+  // margin: 0 15px;
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  .userAdmin__header {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &--search {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .userAdmin__container {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #FFF;
+    border: 1px solid black;
+    border-radius: 3px;
+  }
+}
+
+@media (min-width: 740px) {
+  .userAdmin__container {
+    padding: 0 10px;
+  }
+  .userAdmin__header--title {
+    margin-right: 10px;
+    margin-top: 3px;
+    font-size: large;
+  }
+  .userAdmin__header--search {
+    width: 70%;
+  }
+}
+
+@media (max-width: 739px) {
+  .userAdmin__container {
+    padding: 0;
+  }
+  .userAdmin-table-mobile {
+    font-size: 4.6px;
+  }
+  .userAdmin__header--title {
+    margin-right: 6px;
+    margin-top: 8px;
+    font-size: 12px;
+  }
+  .userAdmin__header--search {
+    width: 95%;
+  }
+}

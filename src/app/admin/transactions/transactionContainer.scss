@@ -1,0 +1,50 @@
+.trans-Admin-his-container{
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: white;
+    border: 0.5px solid #ccc;
+    // box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .trans-Admin__header {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      &--search {
+        display: flex;
+        align-items: center;
+        width: 60%;
+      }
+    }
+
+    .trans-Admin-his-content{
+      margin-top: 30px;
+      border: 0.05px solid rgb(223, 227, 232);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .trans-Admin-his-content-mobile {
+      font-size: 14px;
+    }
+  }
+  
+  @media (min-width: 740px) and (max-width: 1199px){
+    .trans-Admin-his-container{
+      margin-top: 10px;
+    }
+    .trans-Admin-his-content-mobile {
+      font-size: 6px;
+    }
+  }
+  
+  @media (max-width: 739px) {
+    .trans-Admin-his-container{
+      margin-top: 10px;
+    }
+    .trans-Admin-his-content-mobile {
+      font-size: 2.7px;
+    }
+  }
