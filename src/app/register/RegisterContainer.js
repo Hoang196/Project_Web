@@ -1,13 +1,35 @@
-import React, { useState } from "react";
-import { Button, DatePicker, Form, Input, notification, Select } from "antd";
+import React, { useState, useEffect } from "react";
+import { notification } from "antd";
 import "./RegisterContainer.scss"
 import 'antd/dist/antd.css';
 import { registerApi } from "../../services/api/AccountApi";
+import Validator from './Validator';
 
 
 const RegisterForm = () => {
 
     const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        Validator({
+            form: '#form-register',
+            formGroupSelector: '.register-form-group',
+            errorSelector: '.register-form-message',
+            rules: [
+                Validator.isEmail('#email'),
+                Validator.isRequired('#name', 'Vui lòng nhập tên của bạn'),
+                Validator.isRequired('#phoneNumber', 'Vui lòng nhập số điện thoại'),
+                Validator.minLength('#password', 6),
+                Validator.isConfirmed('#password_confirmation', function () {
+                    return document.querySelector('#form-register #password').value;
+                }, 'Mật khẩu nhập lại không chính xác'),
+            ],
+            onSubmit: function (data) {
+                //Call API
+                onSubmit(data);
+            }
+        });
+    })
 
     const onSubmit = async (values) => {
         values.dob = values.dob.format("DD-MM-YYYY")
@@ -36,7 +58,7 @@ const RegisterForm = () => {
         <div className="register__page container-fluid">
             <div className={"register__page--container"}>
                 <div className="register-main">
-                    <form className="register-form">
+                    <form className="register-form" id="form-register">
                         <h3 className="register-heading">Thành viên đăng ký</h3>
                         <p className="register-desc">Chào mừng bạn đến với cộng đồng đồ cũ</p>
 
@@ -50,29 +72,29 @@ const RegisterForm = () => {
                         </div>
 
                         <div className="register-form-group">
-                            <label htmlFor="email" className="register-form-label">Tên</label>
-                            <input id="email" name="email" type="text" placeholder="VD: HoangCosNY"
+                            <label htmlFor="name" className="register-form-label">Tên</label>
+                            <input id="name" name="name" type="name" placeholder="VD: HoangCosNY"
                                 className="register-form-control" />
                             <span className="register-form-message" />
                         </div>
 
                         <div className="register-form-group">
-                            <label htmlFor="email" className="register-form-label">Số điện thoại</label>
-                            <input id="email" name="email" type="text" placeholder="VD: 0123456789"
+                            <label htmlFor="phoneNumber" className="register-form-label">Số điện thoại</label>
+                            <input id="phoneNumber" name="phoneNumber" type="text" placeholder="VD: 0123456789"
                                 className="register-form-control" />
                             <span className="register-form-message" />
                         </div>
 
                         <div className="register-form-group">
-                            <label htmlFor="email" className="register-form-label">Mật khẩu</label>
-                            <input id="email" name="email" type="text" placeholder="Cần có ít nhất 6 kí tự"
+                            <label htmlFor="password" className="register-form-label">Mật khẩu</label>
+                            <input id="password" name="password" type="password" placeholder="Cần có ít nhất 6 kí tự"
                                 className="register-form-control" />
                             <span className="register-form-message" />
                         </div>
 
                         <div className="register-form-group">
-                            <label htmlFor="password" className="register-form-label">Nhập lại mật khẩu</label>
-                            <input id="password" name="password" type="password" placeholder="Nhập lại mật khẩu"
+                            <label htmlFor="password_confirmation" className="register-form-label">Nhập lại mật khẩu</label>
+                            <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Nhập lại mật khẩu"
                                 className="register-form-control" />
                             <span className="register-form-message" />
                         </div>
