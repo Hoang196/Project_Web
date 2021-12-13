@@ -3,7 +3,7 @@ import { notification } from "antd";
 import "./RegisterContainer.scss"
 import 'antd/dist/antd.css';
 import { registerApi } from "../../services/api/AccountApi";
-import Validator from './Validator';
+import ValidatorRegister from './ValidatorRegister';
 
 
 const RegisterForm = () => {
@@ -11,16 +11,16 @@ const RegisterForm = () => {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        Validator({
+        ValidatorRegister({
             form: '#form-register',
             formGroupSelector: '.register-form-group',
             errorSelector: '.register-form-message',
             rules: [
-                Validator.isEmail('#email'),
-                Validator.isRequired('#name', 'Vui lòng nhập tên của bạn'),
-                Validator.isRequired('#phoneNumber', 'Vui lòng nhập số điện thoại'),
-                Validator.minLength('#password', 6),
-                Validator.isConfirmed('#password_confirmation', function () {
+                ValidatorRegister.isEmail('#email'),
+                ValidatorRegister.isRequired('#name', 'Vui lòng nhập tên của bạn'),
+                ValidatorRegister.isRequired('#phoneNumber', 'Vui lòng nhập số điện thoại'),
+                ValidatorRegister.minLength('#password', 6),
+                ValidatorRegister.isConfirmed('#password_confirmation', function () {
                     return document.querySelector('#form-register #password').value;
                 }, 'Mật khẩu nhập lại không chính xác'),
             ],

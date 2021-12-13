@@ -6,7 +6,7 @@ import { loginApi, registerApi } from "../../services/api/AccountApi";
 import firebase from "../firebase/index";
 import "./LoginContainer.scss";
 import paths from "../../router/paths";
-import Validator from "./Validator";
+import ValidatorLogin from "./ValidatorLogin";
 
 const LoginContainer = () => {
 
@@ -14,13 +14,13 @@ const LoginContainer = () => {
     const { setUser } = useContext(AppContext)
 
     useEffect(() => {
-        Validator({
+        ValidatorLogin({
             form: '#form-login',
             formGroupSelector: '.login-form-group',
             errorSelector: '.login-form-message',
             rules: [
-                Validator.isEmail('#email'),
-                Validator.minLength('#password', 6)
+                ValidatorLogin.isEmail('#email'),
+                ValidatorLogin.minLength('#password', 6)
             ],
             onSubmit: function (data) {
                 //Call API

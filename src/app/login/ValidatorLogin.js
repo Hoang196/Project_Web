@@ -1,4 +1,4 @@
-const Validator = (options) => {
+const ValidatorLogin = (options) => {
 
     function getParent(element, selector) {
         while (element.parentElement) {
@@ -107,17 +107,17 @@ const Validator = (options) => {
     }
 }
 
-Validator.isEmail = function (selector, message) {
+ValidatorLogin.isEmail = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            let regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            let regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             return regex.test(value) ? undefined : message || 'Trường này phải là email'
         }
     };
 }
 
-Validator.minLength = function (selector, min, message) {
+ValidatorLogin.minLength = function (selector, min, message) {
     return {
         selector: selector,
         test: function (value) {
@@ -126,4 +126,4 @@ Validator.minLength = function (selector, min, message) {
     };
 }
 
-export default Validator
+export default ValidatorLogin
