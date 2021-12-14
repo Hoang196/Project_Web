@@ -18,7 +18,9 @@ const DefaultContainer = ({ route }) => {
         if (_.isEmpty(user)) window.location.href = "/login"
     })
 
-    const onSearch = (key) => {
+    const onSearch = (e) => {
+        e.preventDefault()
+        let key = document.getElementById("navbar-search").value
         localStorage.setItem('keySearch', key)
         window.location.href = paths.Product;
     }
@@ -53,19 +55,38 @@ const DefaultContainer = ({ route }) => {
                         <li className={window.location.pathname === paths.UserPage(user._id) ? "active" : ""}>
                             <a className="header__navbar--menu-link" href={paths.UserPage(user._id)}>Trang cá nhân</a>
                         </li>
-                        <li>
-                            <span className="header__navbar--menu-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true">
-                                Tài khoản
-                            </span>
-                            <span className="dropdown-menu" aria-labelledby="navbarDropdown" >
-                                <a className="dropdown-item" href={paths.UserInfo}>Hồ sơ</a>
-                                <span className="dropdown-divider"></span>
-                                <a className="dropdown-item" onClick={() => { removeLocalStorage("user") }} href="/login">Đăng xuất</a>
-                            </span>
+
+                        <li className={window.location.pathname === paths.UserInfo ? "active navbar-disable" : "navbar-disable"}>
+                            <a className="header__navbar--menu-link " href={paths.UserInfo}>Hồ sơ cá nhân</a>
                         </li>
-                        <li className="header__navbar--search col-xl-5">
-                            <Search className="header__navbar--search-input col-xl-9" placeholder="Nhập sản phẩm bạn muốn tìm" allowClear onSearch={(key) => onSearch(key)} size="large" />
+                        <li className={window.location.pathname === paths.History(user._id) ? "active navbar-disable" : "navbar-disable"}>
+                            <a className="header__navbar--menu-link" href={paths.History(user._id)}>Lịch sử giao dịch</a>
+                        </li>
+                        <li className="navbar-disable">
+                            <a href="/login" className="header__navbar--menu-link" onClick={() => { removeLocalStorage("user") }}>Đăng xuất</a>
+                        </li>
+
+                        <form className="form-inline header__navbar--menu-search" onSubmit={(e) => onSearch(e)}>
+                            <input className="header__navbar--menu-search-input" type="search" placeholder="Tìm kiếm sản phẩm"
+                                   aria-label="Search" id="navbar-search"/>
+                            <button className="header__navbar--menu-search-btn" type="submit" >
+                                <i className="fa fa-search"/>
+                            </button>
+                        </form>
+                        <li>
+                            <span className="header__navbar--menu-avatar dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true">
+                                <div className="header__navbar--menu-avatar-img">
+                                    <h1>{user.username.charAt(0).toUpperCase()}</h1>
+                                </div>
+                            </span>
+                            <span className="dropdown-menu header__navbar--menu-person" aria-labelledby="navbarDropdown" >
+                                <a className="dropdown-item header__navbar--menu-person-item" href={paths.UserInfo}>Hồ sơ cá nhân</a>
+                                <span className="dropdown-divider"/>
+                                <a className="dropdown-item header__navbar--menu-person-item" href={paths.History(user._id)}>Lịch sử giao dịch</a>
+                                <span className="dropdown-divider"/>
+                                <a href="/login" className="dropdown-item header__navbar--menu-person-item" onClick={() => { removeLocalStorage("user") }}>Đăng xuất</a>
+                            </span>
                         </li>
                     </ul>
 

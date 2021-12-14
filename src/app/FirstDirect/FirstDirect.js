@@ -3,8 +3,11 @@ import Footer from "../homepage/Footer"
 import { Spring, animated } from 'react-spring'
 import paths from "../../router/paths";
 import { MenuOutlined } from '@ant-design/icons';
+import {useState} from "react";
 
 const FirstDirect = () => {
+
+    const [overflow, setOverflow] = useState({overflow: "hidden"})
 
     const onSearch = (e) => {
         e.preventDefault()
@@ -21,17 +24,11 @@ const FirstDirect = () => {
     }, 3000);
 
     const clickMenu = () => {
-        let menu = document.getElementById('basePage-menu');
-        let style = window.getComputedStyle(menu)
-        let isClose = style.getPropertyValue('overflow')
-        console.log("ndh", typeof style.getPropertyValue('overflow'))
 
-        if (isClose === "hidden") {
-            console.log("YES")
-            menu.style.removeProperty('overflow');
+        if (overflow.overflow === "hidden") {
+            setOverflow({overflow: ""})
         } else {
-            console.log("NO")
-            menu.style.overflow = 'hidden';
+            setOverflow({overflow: "hidden"})
         }
     }
 
@@ -59,7 +56,7 @@ const FirstDirect = () => {
                             </div>
                         </div>
 
-                        <div id="basePage-menu" className="basePage__header--menu-list">
+                        <div className="basePage__header--menu-list" style={overflow}>
 
                             <div className="basePage__header--menu-icon" onClick={() => clickMenu()}>
                                 <MenuOutlined className="header__navbar-menu-icon-btn" />

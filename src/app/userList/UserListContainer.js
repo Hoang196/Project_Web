@@ -54,17 +54,21 @@ const UserListContainer = (props) => {
         setData(dataUserSearch)
     }
 
+    const onSearch = (e) => {
+        e.preventDefault()
+    }
+
     const { Column } = Table;
     return (
         <div className={"container-fluid mt-3 user__base col-12 col-lg-10"}>
 
             <div className={"user__header"}>
-                <div className={"user__header--search"}>
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Tìm kiếm</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Default" placeholder="Nhập tên, email" onChange={(event) => onchange(event)} />
-                </div>
+                <form className="form-inline user__header--search" onSubmit={(e) => onSearch(e)}
+                    onChange={(key) => onchange(key)}>
+                    <input className="user__header--search-input" type="search" placeholder="Nhập tên, email"
+                           aria-label="Search"/>
+                    <button className="user__header--search-btn" type="submit" >Tìm kiếm</button>
+                </form>
             </div>
 
             <div className={"user__container col-12 col-lg-12"}>
@@ -72,10 +76,10 @@ const UserListContainer = (props) => {
                     <Column title="Email" dataIndex="email" key="email" className="user-table-mobile" />
                     <Column title="Tên người dùng" dataIndex="username" key="username" className="user-table-mobile" />
                     <Column title="Phone Number" dataIndex="phoneNumber" key="phoneNumber" className="user-table-mobile" />
-                    <Column title="Gender" dataIndex="gender" key="gender" className="user-table-mobile" />
+                    {/*<Column title="Gender" dataIndex="gender" key="gender" className="user-table-mobile" />*/}
                     {/* <Column title="Date Of Birth" dataIndex="dateOfBirth" key="dateOfBirth" className="user-table-mobile" /> */}
                     <Column
-                        title="Action"
+                        title="Hoạt động"
                         key="action"
                         render={(text, record) => (
                             <Space size="middle">

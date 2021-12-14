@@ -21,10 +21,6 @@
         padding: 0;
       }
 
-      li > span {
-        text-transform: uppercase;
-      }
-
       li:hover > a {
         background-color: #ccc;
         color: #000;
@@ -104,15 +100,90 @@
 }
 
 @media (min-width: 1200px) {
+
+  .navbar-disable {
+    display: none;
+  }
+
   .header__navbar {
-    &--search {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
 
     &--menu {
       display: flex;
+
+      &-search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42%;
+
+        &-input {
+          padding: 7px 20px;
+          width: 60%;
+          border: none;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+        }
+
+        &-btn {
+          height: 36px;
+          border: none;
+          width: 35px;
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #edf0f0;
+        }
+
+        &-btn:hover {
+          background-color: orangered;
+          color: #fff;
+        }
+
+      }
+
+      &-avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+        color: #fff;
+
+        &-img {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          h1 {
+            margin: 0;
+            padding: 8px 14px;
+            background-color: rgb(62, 133, 62);
+            color: #fff;
+            font-size: 20px;
+            border-radius: 50%;
+          }
+
+        }
+
+      }
+
+      &-person {
+        margin-top: -1px;
+        border: 1px solid #40D3DC;
+
+        &-item {
+          padding: 6px 12px;
+          font-size: 15px;
+          line-height: 32px;
+          font-weight: 500;
+        }
+
+        &-item:hover {
+          background-color: #2FBE8E;
+          color: #fff;
+        }
+      }
   
       &-icon {
         display: none;
@@ -129,12 +200,13 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 @media (max-width: 1199px) {
+
+  .navbar-disable {
+    display: block;
+  }
+
   .header__navbar {
     overflow: hidden;
-
-    &--search {
-      display: none;
-    }
 
     &--menu {
       display: block;
@@ -152,6 +224,10 @@
       &-list {
         // position: initial;
         z-index: 10;
+      }
+
+      &-search {
+        display: none;
       }
 
       &-icon {

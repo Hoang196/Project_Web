@@ -9,7 +9,18 @@
 
         &-search {
             display: flex;
-            justify-content: center; 
+            justify-content: center;
+
+          .ant-input-search-button {
+            background-color: #ccc;
+            color: #000;
+            border: 1px solid #ccc;
+          }
+
+          .ant-input-search-button:hover {
+            background-color: orangered;
+            color: #fff;
+          }
         
         }
     }

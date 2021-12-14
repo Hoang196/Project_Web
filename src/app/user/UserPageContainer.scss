@@ -19,6 +19,15 @@
 
             &-btn {
                 float: right;
+                background-color: #019160;
+                color: #fff;
+                border: 1px solid #ccc;
+            }
+
+            &-btn:hover {
+                background-color: #2FBE8E;
+                border: 1px solid #ccc;
+                color: #fff;
             }
 
         }
@@ -28,6 +37,17 @@
             display: flex;
             justify-content: center; 
             width: 100%;
+
+            .ant-input-search-button {
+                background-color: #ccc;
+                color: #000;
+                border: 1px solid #ccc;
+            }
+
+            .ant-input-search-button:hover {
+                background-color: orangered;
+                color: #fff;
+            }
         }
 
         &-listPosts {
@@ -62,6 +82,15 @@
 }
 
 @media (max-width: 739px) {
+
+    .ant-input-affix-wrapper-lg {
+        padding: 5px 10px;
+    }
+
+    .ant-input-search-large .ant-input-search-button {
+        height: 36px;
+    }
+
     .user__page-container-header-title {
         font-size: 14px;
     }

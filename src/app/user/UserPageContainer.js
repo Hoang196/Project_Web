@@ -8,7 +8,6 @@ import "./UserPageContainer.scss"
 import { getUserDataById } from "../../services/api/getUserData";
 import { getPostDataByUserId, getPostOfUserBySearch } from "../../services/api/PostData";
 import { getPostDataByUserIdFake } from "../../services/api/PostData";
-import TransactionHistoryOfUser from "../TransactionHistory/TransactionHistoryOfUser";
 
 const { Search } = Input;
 
@@ -148,11 +147,6 @@ const UserPageContainer = (props) => {
                 </div>
                 <div className={"user__page-container-userInfo mt-3 col-xl-3 col-12"} >
                     <UserInfoContainer user={userData} isOwner={isOwner} />
-                </div>
-            </div>
-            <div className="row">
-                <div className={"mt-2 col-12 user__page--trans"} >
-                    {isOwner === true ? <TransactionHistoryOfUser userId={userDataId} /> : <div />}
                 </div>
             </div>
             <UploadPost newPostId={newPostId} visible={newPostModalVisible} setVisible={setNewPostModalVisible} />

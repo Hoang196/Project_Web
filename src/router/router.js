@@ -12,6 +12,7 @@ import ProductContainer from "../app/products/ProductContainer";
 import UserPageContainer from "../app/user/UserPageContainer";
 import PostDetailContainer from "../app/postDetail/PostDetailContainer";
 import UserRecordContainer from "../app/userRecord/UserRecordContainer";
+import TransactionHistoryOfUser from "../app/TransactionHistory/TransactionHistoryOfUser"
 import AdminContainer from "../app/admin/AdminContainer";
 import ProductContainerAdmin from "../app/admin/products/productContainer";
 import UserListContainerAdmin from "../app/admin/userList/userListContainer";
@@ -101,6 +102,11 @@ const router = [
                         path: paths.UserList,
                         exact: true,
                         component: UserListContainer
+                    },
+                    {
+                        path: paths.History(),
+                        exact: true,
+                        component: TransactionHistoryOfUser
                     },
                 ]
             },

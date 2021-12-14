@@ -14,7 +14,7 @@ const UserInfoContainer = (props) => {
 
     return (
         <div className={"info-content"}>
-            <h5>Thông tin cá nhân</h5>
+            <h2>Thông tin cá nhân</h2>
             <div>
                 <strong>Tên:</strong> <span>{user.username}</span>
             </div>

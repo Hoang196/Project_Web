@@ -29,11 +29,12 @@ const PostDetailContainer = (props) => {
     const getPostData = async () => {
         const { data, success } = await getPostDataByPostId(postId)
         if (success) {
+            data.data.image_url.unshift(data.data.main_image);
             setPostData(data.data);
             setMainImage(data.data.main_image);
-            setAdditionalImages(data.data.image_url)
-            setOwnerId(data.data.owner_id)
-            getUserData(data.data.owner_id)
+            setAdditionalImages(data.data.image_url);
+            setOwnerId(data.data.owner_id);
+            getUserData(data.data.owner_id);
         }
     }
 
@@ -63,7 +64,7 @@ const PostDetailContainer = (props) => {
                         <div className="post__detail--header-title">
                             <h1 className="post__detail--header-title-1">
                                 Chi tiết sản phẩm
-                                <Button className={"post__detail--header-btn"} type="primary" htmlType="submit" size="default"
+                                <Button type="primary" htmlType="submit" size="default"
                                     onClick={() => { setModalUserPostVisible(true) }} style={user._id === userData._id ? { display: "none" } : { display: "inline-block" }}
                                 >
                                     Đổi sản phẩm
@@ -88,7 +89,7 @@ const PostDetailContainer = (props) => {
                         </div>
                         <div className={"post__detail-container-content col-xl-6 col-12"}>
                             <div className={"post__detail-container-product col-xl-12 col-12"} >
-                                <h5 style={{ paddingLeft: "15px" }}>Thông tin sản phẩm</h5>
+                                <h2 style={{ paddingLeft: "15px" }}>Thông tin sản phẩm</h2>
                                 <div className="post__detail-container-product-info">
                                     <div className="post__detail-container-product-info-label col-4">Tên sản phẩm:</div>
                                     <div className="post__detail-container-product-info-value col-8">{postData.name}</div>
@@ -121,7 +122,7 @@ const PostDetailContainer = (props) => {
 
                             <div className={"post__detail-form col-xl-12 col-12"} >
                                 <div className={"post__detail-form-userInfo"}>
-                                    <h5>Thông tin chủ sản phẩm</h5>
+                                    <h2>Thông tin chủ sản phẩm</h2>
                                     <div>
                                         <span>Tên: </span> <span>{userData.username}</span>
                                     </div>

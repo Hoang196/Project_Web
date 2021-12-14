@@ -4,7 +4,6 @@
   border-radius: 5px;
 
   &-content {
-    padding: 0;
     border-radius: 5px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -15,20 +14,6 @@
     padding: 0;
     border-bottom: 0.3px solid #ccc;
 
-    &-btn {
-      margin-left: 10px;
-      padding: 3px 10px;
-      background-color: #000;
-      color: #fff;
-      border: 1px solid #ccc;
-      display: none;
-    }
-
-    &-btn:hover {
-      background-color: #fff;
-      color: #000;
-    }
-
     &-title {
         margin: 22px 0;
         
@@ -37,6 +22,21 @@
             font-weight: 500;
             text-transform: capitalize;
             color: #333;
+            display: flex;
+            align-items: center;
+
+          .ant-btn-primary {
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #ccc;
+            margin-left: 12px;
+          }
+
+          .ant-btn-primary:hover {
+            background-color: #fff;
+            color: #000;
+          }
+
         }
 
         &-2 {
@@ -103,6 +103,11 @@
 }
 
 @media (min-width: 1200px) {
+
+  .ant-btn-primary {
+    padding: 0 15px;
+  }
+
   .post__detail {
     &-container {
       &-image {
@@ -147,17 +152,19 @@
 }
 
 @media (max-width: 1199px) {
+
+  .ant-btn-primary {
+    padding: 0 6px;
+  }
+
   .post__detail {
     &--header {
-      &-btn {
-        margin-top: 6px;
-      }
 
       &-title {
         margin: 18px 0;
 
         &-1 {
-          font-size: 20px;
+          font-size: 19px;
         }
 
         &-2 {
