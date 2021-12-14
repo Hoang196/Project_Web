@@ -18,6 +18,7 @@ const UserListContainer = (props) => {
     const getAllUser = async () => {
         const { data, success } = await getAllUserData()
         if (success) {
+            console.log("ndh", data);
             dataUsersBase = data.data;
             for (let i = 0; i < dataUsersBase.length; i++) {
                 dataUsers.push({

@@ -1,0 +1,81 @@
+.contactBase {
+  padding: 0;
+  margin: 0;
+  background: url("../../images/map.jpg") top center / cover no-repeat;
+  min-height: 100vh;
+}
+
+.contactPage {
+  background-color: rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    padding: 30px;
+    border-radius: 10px;
+    width: 50%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    &--header {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      border-bottom: 0.5px solid #cccccc;
+
+      h1 {
+        color: #287056;
+      }
+    }
+
+    &--container {
+
+      &-group {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+      }
+
+    }
+
+  }
+}
+
+.group-message {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.group-icon-address {
+  background: url("../../images/address.jpg") top center / cover no-repeat;
+  height: 40px;
+  width: 35px;
+  margin-right: 50px;
+}
+
+.group-icon-email {
+  background: url("../../images/email.png") top center / cover no-repeat;
+  height: 40px;
+  width: 50px;
+  margin-right: 35px;
+}
+
+.group-icon-phone {
+  background: url("../../images/phone.png") top center / cover no-repeat;
+  height: 40px;
+  width: 40px;
+  margin-right: 45px;
+}
+
+@media (min-width: 740px) and  (max-width: 1200px) {
+  .contactPage__content {
+    width: 70%;
+  }
+}
+
+@media (max-width: 739px) {
+  .contactPage__content {
+    width: 90%;
+  }
+}

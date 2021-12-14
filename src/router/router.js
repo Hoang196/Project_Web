@@ -2,6 +2,7 @@ import App from "../App";
 import paths from "./paths";
 import FirstDirect from "../app/FirstDirect/FirstDirect";
 import infoContainer from "../app/information/infoContainer";
+import contactContainer from "../app/information/contactContainer";
 import LoginContainer from "../app/login/LoginContainer";
 import RegisterContainer from "../app/register/RegisterContainer";
 import DefaultContainer from "../app/DefaultContainer";
@@ -30,6 +31,11 @@ const router = [
                 path: paths.Information,
                 exact: true,
                 component: infoContainer
+            },
+            {
+                path: paths.Contact,
+                exact: true,
+                component: contactContainer
             },
             {
                 path: paths.Login,

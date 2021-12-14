@@ -67,13 +67,13 @@ const FirstDirect = () => {
 
                             <ul className="basePage__header--menu-list-items1">
                                 <li className="basePage__header--menu-list-items1-field">
-                                    <a href="/login" className="basePage__header--menu-list-items1-field-link">Trang chủ</a>
+                                    <a href="/" className="basePage__header--menu-list-items1-field-link">Trang chủ</a>
                                 </li>
                                 <li className="basePage__header--menu-list-items1-field">
                                     <a href="/info" className="basePage__header--menu-list-items1-field-link">Giới thiệu</a>
                                 </li>
                                 <li className="basePage__header--menu-list-items1-field">
-                                    <a href="/login" className="basePage__header--menu-list-items1-field-link">Liên hệ</a>
+                                    <a href="/contact" className="basePage__header--menu-list-items1-field-link">Liên hệ</a>
                                 </li>
                             </ul>
 

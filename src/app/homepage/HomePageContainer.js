@@ -33,7 +33,7 @@ const HomePageContainer = (props) => {
     }, 500);
 
 
-    var counter = 1;
+    let counter = 1;
     setInterval(() => {
         document.getElementById('radio' + counter).checked = true;
         counter++;
@@ -58,7 +58,7 @@ const HomePageContainer = (props) => {
                                 <div class="homePage__container--tab-title-item">Đơn giản</div>
                                 <div class="homePage__container--tab-title-item">Kết nối</div>
                                 <div class="homePage__container--tab-title-item">Phát triển</div>
-                                <div class="homePage__container--tab-title-line"></div>
+                                <div class="homePage__container--tab-title-line"/>
                             </div>
 
                             <div class="homePage__container--tab-content">
