@@ -72,7 +72,7 @@ const UserListContainer = (props) => {
             </div>
 
             <div className={"user__container col-12 col-lg-12"}>
-                <Table dataSource={Data} className="user-table-mobile">
+                <Table dataSource={Data} pagination={{ pageSize: 8 }} className="user-table-mobile">
                     <Column title="Email" dataIndex="email" key="email" className="user-table-mobile" />
                     <Column title="Tên người dùng" dataIndex="username" key="username" className="user-table-mobile" />
                     <Column title="Phone Number" dataIndex="phoneNumber" key="phoneNumber" className="user-table-mobile" />

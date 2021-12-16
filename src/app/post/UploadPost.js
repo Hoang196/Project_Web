@@ -94,7 +94,7 @@ const UploadPost = (props) => {
     return (
         <Modal
             visible={props.visible}
-            title={"Bài đăng mới"}
+            title={"Thêm sản phẩm mới"}
             onCancel={() => props.setVisible(false)}
             footer={null}
             width={"800px"}
@@ -166,7 +166,7 @@ const UploadPost = (props) => {
                         {mainImage.length < 1 ? uploadButton : null}
                     </Upload>
                 </Form.Item>
-                <Form.Item name={'imageDescription'} label={"Ảnh mô tả thêm (tối đa 3)"} rules={[
+                <Form.Item name={'imageDescription'} label={"Ảnh mô tả thêm (3 ảnh)"} rules={[
                     {
                         required: true,
                     },

@@ -11,7 +11,7 @@ const UserRecordContainer = () => {
 
     return (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <div className="container-fluid recordPage row col-lg-9 col-11">
+            <div className="container-fluid recordPage row col-lg-10 col-11">
 
                 <div className="recordPage__header col-12">
                     <div className="recordPage__header--title">

@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { getTransHisbyUserId } from "../../services/api/TransactionHistoryApi";
 import { notification } from "antd";
 import paths from "../../router/paths";
 import { Table } from "antd/es";
 import "./TransactionHistoryOfUser.scss"
+import AppContext from "../../AppContext";
+
+let dataTransBase;
+let dataTrans = [];
 
 const TransactionHistoryOfUser = (props) => {
-    const userId = props.userId
     const [data, setData] = useState([])
+    const { user } = useContext(AppContext)
 
     useEffect(() => {
         getDataTrans()
@@ -15,46 +19,78 @@ const TransactionHistoryOfUser = (props) => {
     }, [])
 
     const getDataTrans = async () => {
-        const { data, success } = await getTransHisbyUserId(userId)
+        const { data, success } = await getTransHisbyUserId(user._id)
         if (success) {
-            console.log("ndh3", data.data)
-            setData(data.data)
+            dataTransBase = data.data;
+            for (let i = 0; i < dataTransBase.length; i++) {
+                dataTrans.push({
+                    key: dataTransBase[i]._id,
+                    id: dataTransBase[i]._id,
+                    FromUserId: dataTransBase[i].from_user_id,
+                    FromUserName: dataTransBase[i].from_user_name,
+                    ToUserId: dataTransBase[i].to_user_id,
+                    ToUserName: dataTransBase[i].to_user_name,
+                    FromPostId: dataTransBase[i].from_post_id,
+                    FromPostName: dataTransBase[i].from_post_name,
+                    ToPostId: dataTransBase[i].to_post_id,
+                    ToPostName: dataTransBase[i].to_post_name,
+                    status: dataTransBase[i].status,
+                    extra: dataTransBase[i].extra,
+                    updateAt: dataTransBase[i].updatedAt,
+                });
+            }
+            setData(dataTrans)
         } else {
             notification.error("Không tìm thấy lịch sử giao dịch!")
         }
-
     }
 
-    const column = [];
-    for (let i = 0; i < data.length; i++) {
-        column.push({
-            key: data[i]._id,
-            id: data[i]._id,
-            FromUserId: data[i].from_user_id,
-            FromUserName: data[i].from_user_name,
-            ToUserId: data[i].to_user_id,
-            ToUserName: data[i].to_user_name,
-            FromPostId: data[i].from_post_id,
-            FromPostName: data[i].from_post_name,
-            ToPostId: data[i].to_post_id,
-            ToPostName: data[i].to_post_name,
-            status: data[i].status,
-            extra: data[i].extra,
-            updateAt: data[i].updatedAt,
-        });
+    let dataTransSearch = [];
+    function onchange(event) {
+        let message = event.target.value;
+        for (let i = 0; i < dataTransBase.length; i++) {
+            if (dataTransBase[i].from_user_name.includes(message) || dataTransBase[i].to_user_name.includes(message) ||
+                dataTransBase[i].from_post_name.includes(message) || dataTransBase[i].to_post_name.includes(message)) {
+                dataTransSearch.push({
+                    key: dataTransBase[i]._id,
+                    id: dataTransBase[i]._id,
+                    FromUserId: dataTransBase[i].from_user_id,
+                    FromUserName: dataTransBase[i].from_user_name,
+                    ToUserId: dataTransBase[i].to_user_id,
+                    ToUserName: dataTransBase[i].to_user_name,
+                    FromPostId: dataTransBase[i].from_post_id,
+                    FromPostName: dataTransBase[i].from_post_name,
+                    ToPostId: dataTransBase[i].to_post_id,
+                    ToPostName: dataTransBase[i].to_post_name,
+                    status: dataTransBase[i].status,
+                    extra: dataTransBase[i].extra,
+                    updateAt: dataTransBase[i].updatedAt,
+                });
+            }
+        }
+        setData(dataTransSearch)
     }
 
     const { Column } = Table;
 
+    const onSearch = (e) => {
+        e.preventDefault()
+    }
+
     return (
         <div className="trans-his-page">
             <div className={"trans-his-container col-xl-10 col-12"}>
-                <h5
-                    style={{ fontSize: "22px", marginBottom: "20px", fontWeight: "800", display: "inline" }}>Lịch sử trao đổi của bạn:
-                </h5>
+                <div className={"trans__header"}>
+                    <form className="form-inline trans__header--search" onSubmit={(e) => onSearch(e)}
+                          onChange={(key) => onchange(key)}>
+                        <input className="trans__header--search-input" type="search" placeholder="Nhập tên người dùng hoặc sản phẩm"
+                               aria-label="Search"/>
+                        <button className="trans__header--search-btn" type="submit" >Tìm kiếm</button>
+                    </form>
+                </div>
 
                 <div className={"trans-his-content"}>
-                    <Table dataSource={column} pagination={{ pageSize: 10 }} className={"trans-his-content-mobile"}>
+                    <Table dataSource={data} pagination={{ pageSize: 6 }} className={"trans-his-content-mobile"}>
                         <Column className={"trans-his-content-mobile"} title="Người yêu cầu" dataIndex="FromUserId" key="FromUserId"
                                 render={(text, record) => (<a href={paths.UserPage(record.FromUserId)}>{record.FromUserName}</a>)}
                         />

@@ -42,7 +42,7 @@ const DefaultContainer = ({ route }) => {
 
                 <nav id="header" className="header__navbar row">
 
-                    <ul className="header__navbar--menu col-xl-12 col-10">
+                    <ul className="header__navbar--menu col-xl-10 col-10">
                         <li className={window.location.pathname === paths.HomePage ? "active" : ""}>
                             <a className="header__navbar--menu-link" href={paths.HomePage}>Trang chủ</a>
                         </li>

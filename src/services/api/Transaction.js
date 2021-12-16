@@ -14,9 +14,15 @@ export const createTransaction = (postIdFrom, postIdTo, userIdFrom, userIdTo) =>
 }
 
 export const completeTrading = (transaction_id) => {
-    const result = createApiRequest({
+    return createApiRequest({
         url: `/api/complete_transaction/${transaction_id}`,
         method: "GET",
     })
-    return result
+}
+
+export const deleteTransaction = (transaction_id) => {
+    return createApiRequest({
+        url: `/api/delete_transaction/${transaction_id}`,
+        method: "DELETE"
+    })
 }

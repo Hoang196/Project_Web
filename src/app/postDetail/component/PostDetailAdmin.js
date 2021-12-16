@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import paths from "../../../router/paths";
 import 'antd/dist/antd.css';
 import { Table, Space, Tooltip, notification } from "antd";
-import { DoubleRightOutlined, InteractionOutlined } from '@ant-design/icons';
+import {DeleteOutlined, DoubleRightOutlined, InteractionOutlined} from '@ant-design/icons';
 import './PostDetailAdmin.scss'
 import { getAllPostWantToTrade } from "../../../services/api/PostData";
-import { completeTrading } from "../../../services/api/Transaction";
+import { completeTrading, deleteTransaction } from "../../../services/api/Transaction";
 import AppContext from "../../../AppContext";
 
 const PostDetailAdmin = (props) => {
@@ -30,6 +30,7 @@ const PostDetailAdmin = (props) => {
             key: Data[i].trading_post._id,
             transactionId: Data[i].transaction_id,
             id: Data[i].trading_post._id,
+            ownerId: Data[i].trading_post.owner_id,
             name: Data[i].trading_post.name,
             type: Data[i].trading_post.type,
             brand: Data[i].trading_post.brand,
@@ -51,10 +52,23 @@ const PostDetailAdmin = (props) => {
         }
     }
 
+    async function clickDelete(transactionId) {
+        const { data } = await deleteTransaction(transactionId)
+        if (data.data.status_code === 200) {
+            window.location.href = paths.PostDetail(postId)
+            alert("Xóa yêu cầu thành công")
+        } else {
+            await notification.error({
+                message: "Error",
+                description: data.data.details
+            })
+        }
+    }
+
     const { Column } = Table;
     return (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <div className="post_admin col-xl-11 col-12" >
+            <div className="post_admin col-xl-10 col-11" >
                 <h1 className="post_admin-title" >
                     Danh sách sản phẩm muốn trao đổi
                 </h1>
@@ -77,9 +91,17 @@ const PostDetailAdmin = (props) => {
                                         </Tooltip>
                                     </a>
                                     {/* eslint-disable-next-line no-undef */}
-                                    <div onClick={props.ownerPost === user._id ? () => clickAccept(record.transactionId, record.id) : null}>
+                                    <div onClick={props.ownerPost === user._id ? () => clickAccept(record.transactionId) : null}>
                                         <Tooltip title={"Chấp nhận đổi"}>
-                                            <InteractionOutlined style={props.ownerPost === user._id ? { color: "green", cursor: "pointer", fontSize: "16px" } : { color: "gray", fontSize: "16px" }} />
+                                            <InteractionOutlined style={props.ownerPost === user._id ?
+                                                { color: "green", cursor: "pointer", fontSize: "16px" } : { color: "gray", fontSize: "16px" }} />
+                                        </Tooltip>
+                                    </div>
+                                    <div onClick={record.ownerId === user._id || props.ownerPost === user._id ?
+                                        () => clickDelete(record.transactionId) : null}>
+                                        <Tooltip title={"Xóa yêu cầu"}>
+                                            <DeleteOutlined style={record.ownerId === user._id || props.ownerPost === user._id ?
+                                                { color: "red", cursor: "pointer", fontSize: "16px" } : { color: "gray", fontSize: "16px" }} />
                                         </Tooltip>
                                     </div>
                                 </Space>

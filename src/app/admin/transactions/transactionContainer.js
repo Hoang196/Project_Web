@@ -5,11 +5,11 @@ import paths from "../../../router/paths";
 import { Table } from "antd/es";
 import "./transactionContainer.scss"
 
-var dataTransBase;
-var dataTrans = [];
+let dataTransBase;
+let dataTrans = [];
 
 const TransactionContainer = (props) => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState()
 
     useEffect(() => {
         getDataTrans()

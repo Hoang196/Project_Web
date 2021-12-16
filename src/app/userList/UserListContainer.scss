@@ -17,6 +17,10 @@
         border: 1px solid #ccc;
       }
 
+      &-input:focus-visible {
+        outline: #40D3DC auto 0.1px;
+      }
+
       &-btn {
         background-color: #ccc;
         color: #000;
@@ -34,12 +38,27 @@
   .user__container {
     width: 100%;
     background-color: #FFF;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     border-radius: 3px;
   }
 }
 
-@media (min-width: 701px) {
+@media (min-width: 1200px) {
+  .user__header--search-input {
+    width: 700px;
+  }
+  .user__container {
+    padding: 0 10px;
+    margin-top: 40px;
+  }
+  .user__header--title {
+    margin-right: 10px;
+    margin-top: 3px;
+    font-size: large;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1199px) {
 
   .user__header--search-input {
     width: 500px;
@@ -62,7 +81,7 @@
     margin-top: 30px;
   }
   .user-table-mobile {
-    font-size: 6.5px;
+    font-size: 8px;
   }
   .user__header--title {
     margin-right: 6px;

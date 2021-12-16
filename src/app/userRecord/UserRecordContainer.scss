@@ -14,9 +14,9 @@
 
 .recordPage {
     background-color: #fff;
-    border: 1px solid #ccc;
     border-radius: 5px;
     padding: 0 33px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
 
     &__header {
         padding: 0;
@@ -76,21 +76,21 @@
                     font-size: 16px;
                     border: 1px solid #ccc;
                     border-radius: 3px;
-                    background-color: #fff;
+                    background-color: #019160;
+                    color: #fff;
                 }
 
                 &-btn:hover {
-                    background-color: #ccc;
-                    color: #000;
+                    background-color: #2FBE8E;
+                    color: #fff;
                 }
             }
         }
 
         &--avatar {
-            padding: 0;
+            padding: 0 0 50px 0;
             display: flex;
             justify-content: center;
-            padding-bottom: 50px;
 
             &-img {
                 display: flex;
