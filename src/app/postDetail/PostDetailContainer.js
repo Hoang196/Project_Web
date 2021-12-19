@@ -156,20 +156,19 @@ const PostDetailContainer = (props) => {
                                             </div>
                                             <hr />
                                             <div className="post__detail-container-product-info">
-                                                <div className="post__detail-container-product-info-label col-4">Mã id:</div>
-                                                <div className="post__detail-container-product-info-value col-8">{userData._id}</div>
-                                            </div>
-                                            <div className="post__detail-container-product-info">
                                                 <div className="post__detail-container-product-info-label col-4">Email:</div>
                                                 <div className="post__detail-container-product-info-value col-8">{userData.email}</div>
                                             </div>
                                             <div className="post__detail-container-product-info">
                                                 <div className="post__detail-container-product-info-label col-4">Số điện thoại:</div>
-                                                <div className="post__detail-container-product-info-value col-8">{userData.phoneNumber}
+                                                <div className="post__detail-container-product-info-value col-8">{userData.phoneNumber}</div>
+                                            </div>
+                                            <div className="post__detail-container-product-info">
+                                                 <div className="post__detail-container-product-info-label col-4">Địa chỉ:</div>
+                                                 <div className="post__detail-container-product-info-value col-8">{userData.address}</div>
                                             </div>
                                         </div>
 
-                                    </div>
                                     </div>
                                 </div>
                             </div>

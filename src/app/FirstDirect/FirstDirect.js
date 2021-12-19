@@ -3,15 +3,31 @@ import Footer from "../homepage/Footer"
 import { Spring, animated } from 'react-spring'
 import paths from "../../router/paths";
 import { MenuOutlined } from '@ant-design/icons';
-import {useState} from "react";
+import { List } from "antd";
+import React, {useEffect, useState} from "react";
+import PostDisplayCard from "../products/component/PostDisplayCard";
+import {getAllPostData} from "../../services/api/PostData";
 
 const FirstDirect = () => {
 
     const [overflow, setOverflow] = useState({overflow: "hidden"})
+    const [postData, setPostData] = useState([])
+
+    useEffect(() => {
+        getPostData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     const onSearch = (e) => {
         e.preventDefault()
         window.location.href = paths.Login;
+    }
+
+    const getPostData = async () => {
+        const { data, success } = await getAllPostData(1)
+        if (success) {
+            setPostData(data.data.posts)
+        }
     }
 
     let counter = 1;
@@ -64,7 +80,7 @@ const FirstDirect = () => {
 
                             <ul className="basePage__header--menu-list-items1">
                                 <li className="basePage__header--menu-list-items1-field">
-                                    <a href="/" className="basePage__header--menu-list-items1-field-link">Trang chủ</a>
+                                    <a href="/login" className="basePage__header--menu-list-items1-field-link">Trang chủ</a>
                                 </li>
                                 <li className="basePage__header--menu-list-items1-field">
                                     <a href="/info" className="basePage__header--menu-list-items1-field-link">Giới thiệu</a>
@@ -153,7 +169,7 @@ const FirstDirect = () => {
                     </div>
                 </div>
 
-                <div class="basePage__container">
+                <div className="basePage__container">
                     <div class="basePage__container--grid col-xl-9 col-11">
                         <div class="basePage__container--grid-box col-xl-2 col-4" onClick={() => onSearch()}>
                             <div className="basePage__container--grid-box-logo">
@@ -265,7 +281,31 @@ const FirstDirect = () => {
                     </div>
                 </div>
 
-                <div class="basePage__container">
+                <div className="basePage__container">
+                    <div className="basePage__container--products col-xl-9 col-11">
+                        <List
+                            grid={{
+                                gutter: 10,
+                                xs: 3,
+                                sm: 3,
+                                md: 3,
+                                lg: 4,
+                                xl: 6,
+                                xxl: 6,
+                            }}
+                            dataSource={postData}
+                            renderItem={post => {
+                                return (
+                                    <List.Item>
+                                        <PostDisplayCard isChoosing={true} postData={post} />
+                                    </List.Item>
+                                )
+                            }}
+                        />
+                    </div>
+                </div>
+
+                <div className="basePage__container">
                     <div class="basePage__container--grid2 col-xl-9 col-11">
                         <div class="basePage__container--grid2-box col-xl-3 col-6" onClick={() => onSearch()}>
                             <div className="basePage__container--grid2-box-logo">

@@ -20,7 +20,7 @@ const UserRecord = (props) => {
         valueData.phoneNumber = value.phoneNumber || user.phoneNumber
         valueData.gender = value.gender || user.gender
         valueData.dateOfBirth = value.dateOfBirth ? value.dateOfBirth.format("DD-MM-YYYY") : user.dateOfBirth
-
+        console.log(valueData)
         editUser(valueData)
     }
 
@@ -37,7 +37,7 @@ const UserRecord = (props) => {
                         window.location.href = "/login"
                     } else {
                         setUser(data.data.user)
-                        window.location.reload()
+                        // window.location.reload()
                     }
                     notification.success({
                         message: "Success",
@@ -85,7 +85,7 @@ const UserRecord = (props) => {
                 <Form.Item
                     name={'password'}
                     label={"Mật khẩu"} >
-                    <Input defaultValue={user.password} />
+                    <Input />
                 </Form.Item>
 
                 <Form.Item
@@ -113,6 +113,12 @@ const UserRecord = (props) => {
                     name="dateOfBirth"
                 >
                     <DatePicker size="large" picker="date" style={{ width: "100%", height: "32px" }} />
+                </Form.Item>
+
+                <Form.Item
+                    name={'address'}
+                    label={"Địa chỉ"} >
+                    <Input defaultValue={user.address} />
                 </Form.Item>
 
                 <Form.Item wrapperCol={{

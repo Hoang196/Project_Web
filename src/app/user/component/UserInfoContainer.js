@@ -26,13 +26,13 @@ const UserInfoContainer = (props) => {
             </div>
             <hr />
             <div>
-                <strong>Mã ID:</strong> <span>{user._id}</span>
-            </div>
-            <div>
                 <strong>Email:</strong> <span>{user.email}</span>
             </div>
             <div>
                 <strong>Số điện thoại: </strong> <span>{user.phoneNumber}</span>
+            </div>
+            <div>
+                <strong>Địa chỉ:</strong> <span>{user.address}</span>
             </div>
             {/* <Button className={"message"} disabled={isOwner === true ? true : false}
                 type={"primary"} size={"large"} onClick={() => setNewPostModalVisible(true)}>

@@ -44,7 +44,7 @@ const DefaultContainer = ({ route }) => {
 
                     <ul className="header__navbar--menu col-xl-10 col-10">
                         <li className={window.location.pathname === paths.HomePage ? "active" : ""}>
-                            <a className="header__navbar--menu-link" href={paths.HomePage}>Trang chủ</a>
+                            <a className="header__navbar--menu-link" href={paths.HomePage}> <i className="fas fa-home" /> Trang chủ</a>
                         </li>
                         <li className={window.location.pathname === paths.Product ? "active" : ""}>
                             <a className="header__navbar--menu-link" href={paths.Product}>Sản phẩm</a>
@@ -67,11 +67,11 @@ const DefaultContainer = ({ route }) => {
                         </li>
 
                         <form className="form-inline header__navbar--menu-search" onSubmit={(e) => onSearch(e)}>
-                            <input className="header__navbar--menu-search-input" type="search" placeholder="Tìm kiếm sản phẩm"
-                                   aria-label="Search" id="navbar-search"/>
-                            <button className="header__navbar--menu-search-btn" type="submit" >
-                                <i className="fa fa-search"/>
-                            </button>
+                            <span className="header__navbar--menu-search-group">
+                                <input className="header__navbar--menu-search-group-input" type="search" placeholder="Tìm kiếm sản phẩm"
+                                       aria-label="Search" id="navbar-search"/>
+                                <i className="fa fa-search" />
+                            </span>
                         </form>
                         <li>
                             <span className="header__navbar--menu-avatar dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"

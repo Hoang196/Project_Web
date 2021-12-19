@@ -21,7 +21,7 @@ const PostDisplayCard = (props) => {
 
     return (
         <div className={post._id !== isSelected ? "post-card-item-card" : "post-card-item-card selected-post"}
-            onClick={isChoosing ? () => { setPostSelected(post._id) } : null}>
+            onClick={isChoosing ? () => { window.location.href = paths.Login } : null}>
             <Tooltip title={"Sản phẩm có sẵn"}>
                 <img className={"post-card-image"} src={post.main_image} alt={"Can't load this img"} />
             </Tooltip>

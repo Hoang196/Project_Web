@@ -225,7 +225,7 @@
             border-radius: 10px;
             padding-top: 55%;
             margin-right: 6px;
-            background: url(../../images/DC13.jpg) top center / cover no-repeat;
+            background: url(../../images/DC11.jpg) top center / cover no-repeat;
           }
 
           &-2 {
@@ -246,7 +246,7 @@
             border-radius: 10px;
             padding-top: 55%;
             margin-right: 6px;
-            background: url(../../images/DC11.jpg) top center / cover no-repeat;
+            background: url(../../images/DC13.jpg) top center / cover no-repeat;
           }
         }
 
@@ -472,6 +472,14 @@
           background: url(../../images/Grid12.png) top center / cover no-repeat;
         }
       }
+    }
+
+    &--products {
+      padding-top: 15px;
+      border: 0.1px solid rgb(226, 223, 223);
+      background-color: #fff;
+      border-radius: 10px;
+      margin-bottom: 30px;
     }
 
     &--grid2 {

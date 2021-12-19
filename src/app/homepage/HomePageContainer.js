@@ -1,7 +1,7 @@
 import React from 'react'
 import "./HomePageContainer.scss"
 
-const HomePageContainer = (props) => {
+const HomePageContainer = () => {
 
     setTimeout(() => {
         const $ = document.querySelector.bind(document);
@@ -33,19 +33,47 @@ const HomePageContainer = (props) => {
     }, 500);
 
 
-    let counter = 1;
-    setInterval(() => {
-        document.getElementById('radio' + counter).checked = true;
-        counter++;
-        if (counter > 5) {
-            counter = 1;
-        }
-    }, 3000);
+
+    // let counter = 1;
+    // setInterval(() => {
+    //     document.getElementById('radio' + counter).checked = true;
+    //     counter++;
+    //     if (counter > 5) {
+    //         counter = 1;
+    //     }
+    // }, 3000);
 
     return (
         <div className="container-fluid homePage">
-            <div className="homePage__container col-11 col-xl-10 row">
-                <div className="homePage__container--tab col-xl-7 col-12">
+
+            <div className="homePage__bgr">
+                <div id="carouselExampleIndicators" className="carousel slide col-xl-10 col-12" data-ride="carousel">
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <div className="homePage__bgr--img1"/>
+                        </div>
+                        <div className="carousel-item">
+                            <div className="homePage__bgr--img2"/>
+                        </div>
+                        <div className="carousel-item">
+                            <div className="homePage__bgr--img3"/>
+                        </div>
+                    </div>
+                    <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                       data-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"/>
+                        <span className="sr-only">Previous</span>
+                    </a>
+                    <a className="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                       data-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"/>
+                        <span className="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+            <div className="homePage__container">
+                <div className="homePage__container--tab col-xl-10 col-12">
                     <div className="col-12 col-xl-11">
                         <div className="homePage__container--tabs">
                             <div class="homePage__container--tab-label">
@@ -86,38 +114,54 @@ const HomePageContainer = (props) => {
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div className="homePage__container--slider col-xl-5 col-12">
-                    <div className="homePage__container--slider-slides">
-                        <input type="radio" name="radio-btn" id="radio1"></input>
-                        <input type="radio" name="radio-btn" id="radio2"></input>
-                        <input type="radio" name="radio-btn" id="radio3"></input>
-                        <input type="radio" name="radio-btn" id="radio4"></input>
-                        <input type="radio" name="radio-btn" id="radio5"></input>
+            <div className="homePage__container">
+                <div className="homePage__container--content col-xl-10 col-12">
+                    <div className="group-image row">
+                        <div className="group-image-1st col-3" />
+                        <div className="group-image-2nd col-3" />
+                        <div className="group-image-3rd col-3" />
+                        <div className="group-image-4th col-3" />
+                        <div className="group-image-5th col-4" />
+                        <div className="group-image-6th col-4" />
+                        <div className="group-image-7th col-4" />
+                        <div className="group-image-8th col-6" />
+                        <div className="group-image-9th col-6" />
+                    </div>
+                </div>
+            </div>
 
-                        <div class="homePage__container--slider-slides-slide first">
-                            <div class="homePage__container--slider-slides-slide-1"></div>
-                        </div>
-                        <div class="homePage__container--slider-slides-slide">
-                            <div class="homePage__container--slider-slides-slide-2"></div>
-                        </div>
-                        <div class="homePage__container--slider-slides-slide">
-                            <div class="homePage__container--slider-slides-slide-3"></div>
-                        </div>
-                        <div class="homePage__container--slider-slides-slide">
-                            <div class="homePage__container--slider-slides-slide-4"></div>
-                        </div>
-                        <div class="homePage__container--slider-slides-slide">
-                            <div class="homePage__container--slider-slides-slide-5"></div>
+            <div className="homePage__container">
+                <div className="homePage__container--warning col-xl-10 col-12">
+                    <div className="homePage__container--warning-content col-xl-11 col-12">
+
+                        <div className="warning-header">
+                            <div className="warning-header-title">Cảnh báo lừa đảo</div>
+                            <div className="warning-header-title2">
+                                *Hiện tại một số đối tượng trên hệ thống đang có hành vi
+                                <span style={{color: "#e71515", fontWeight: "500", fontSize: "19px"}}> lừa đảo </span>
+                                bằng hình thức <span style={{color: "#e71515", fontWeight: "500", fontSize: "19px"}}>tặng, cho đồ cũ </span>
+                                không dùng tới và <span style={{color: "#e71515", fontWeight: "500", fontSize: "19px"}}>thu trước phí ship </span>
+                                cao của người nhẹ dạ cả tin, đang mong muốn có món đồ đó.
+                            </div>
+                            <div className="warning-header-title3">
+                                *Chúng tôi kính mong quý khách hàng cảnh giác khi được cho một món đồ yêu cầu gửi
+                                <span style={{color: "#e71515", fontWeight: "500", fontSize: "19px"}}> tiền ship trước. </span>
+                            </div>
+                            <div className="warning-header-title4">
+                                *Nếu gặp phải trường hợp như vậy, mong quý khách vui lòng liên hệ với
+                                <span style={{color: "#555", fontWeight: "700", fontSize: "24px"}}> Hotline Website: 1900 633833 </span>
+                                để cung cấp thông tin đối tượng lừa đảo!
+                            </div>
+                            <div className="warning-header-title5">
+                                *Mọi thông tin về lừa đảo, tặng đồ đều được thông báo chi tiết tên
+                                <div className="warning-header-title5-contact">FANPAGE: FB.COM/TraoDoiDoCu</div>
+                                <div className="warning-header-title5-contact">WEBSITE: TraoDoiDoCu.VN</div>
+                            </div>
+
                         </div>
 
-                        <div class="homePage__container--slider-slides-navigation">
-                            <div class="homePage__container--slider-slides-navigation-btn1"></div>
-                            <div class="homePage__container--slider-slides-navigation-btn2"></div>
-                            <div class="homePage__container--slider-slides-navigation-btn3"></div>
-                            <div class="homePage__container--slider-slides-navigation-btn4"></div>
-                            <div class="homePage__container--slider-slides-navigation-btn5"></div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -58,7 +58,6 @@
 
     .carousel {
       height: 400px;
-      width: 600px;
 
       .active {
         background-color: #fff;
@@ -66,19 +65,18 @@
 
       .d-block {
         height: 400px;
-        width: 600px;
       }
 
       .carousel-control-prev-icon {
-        height: 30px;
+        height: 40px;
         width: 30px;
-        background-color: #ccc;
+        background-color: rgba(45, 45, 45, 0.62);;
       }
 
       .carousel-control-next-icon {
-        height: 30px;
+        height: 40px;
         width: 30px;
-        background-color: #ccc;
+        background-color: rgba(45, 45, 45, 0.62);;
       }
     }
 
@@ -182,7 +180,6 @@
 
       .carousel {
         height: 350px;
-        width: 100%;
 
         .d-block {
           height: 350px;
@@ -248,7 +245,6 @@
 
       .carousel {
         height: 250px;
-        width: 100%;
 
         .d-block {
           height: 250px;

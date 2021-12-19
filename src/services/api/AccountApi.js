@@ -10,8 +10,8 @@ export const loginApi = (email, password) => {
     return result
 }
 
-export const registerApi = (email, username, password, phoneNumber, gender, dateOfBirth) => {
-    const data = { email, username, password, phoneNumber, gender, dateOfBirth }
+export const registerApi = (email, username, password, phoneNumber, gender, dateOfBirth, address) => {
+    const data = { email, username, password, phoneNumber, gender, dateOfBirth, address }
     const result = createApiRequest({
         url: '/api/register',
         method: 'POST',

@@ -26,16 +26,20 @@ const RegisterForm = () => {
             ],
             onSubmit: function (data) {
                 //Call API
-                onSubmit(data);
+                handleSubmit(data);
             }
         });
     })
 
-    const onSubmit = async (values) => {
-        values.dob = values.dob.format("DD-MM-YYYY")
+    const handleSubmit = async () => {
+        let email = document.getElementById("email").value;
+        let username = document.getElementById("name").value;
+        let password = document.getElementById("password").value;
+        let phoneNumber = document.getElementById("phoneNumber").value;
+
         setLoading(true)
         const { data, success } =
-            await registerApi(values.email, values.username, values.password, values.phone_number, values.gender, values.dob)
+            await registerApi(email, username, password, phoneNumber, "Chưa có", "Chưa có", "Chưa có")
 
         if (success) {
             if (data.data.status_code === 200) {
@@ -51,10 +55,11 @@ const RegisterForm = () => {
                 description: data.data.detail
             })
         }
+
     }
 
 
-    return (
+        return (
         <div className="register__page container-fluid">
             <div className={"register__page--container"}>
                 <div className="register-main">

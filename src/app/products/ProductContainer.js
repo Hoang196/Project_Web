@@ -3,7 +3,7 @@ import { Input, List } from "antd";
 import PostDisplayCard from "./component/PostDisplayCard";
 import "./ProductContainer.scss"
 import { getAllPostData, getPostBySearch } from "../../services/api/PostData";
-import paths from "../../router/paths";
+// import paths from "../../router/paths";
 const { Search } = Input;
 
 const ProductContainer = (props) => {

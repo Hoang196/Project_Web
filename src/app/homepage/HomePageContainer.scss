@@ -1,13 +1,4 @@
 
-.homePage__banner {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 22px 0 rgba(0, 0, 0, 0.22);
-    color:#287056;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-align: center;
-}
-
 .grow {
     transition: all .5s ease-in-out;
 }
@@ -20,37 +11,73 @@
 /* ////////////////////////////////////////////////////////////////////////////// */
 
 .homePage {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
     padding-bottom: 5px;
+    margin-top: -20px;
+
+    &__bgr {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+
+        .carousel {
+            padding: 0;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+        }
+
+        .carousel-control-prev-icon {
+            height: 60px;
+            width: 40px;
+            background-color: rgba(45, 45, 45, 0.62);
+        }
+
+        .carousel-control-next-icon {
+            height: 60px;
+            width: 40px;
+            background-color: rgba(45, 45, 45, 0.62);
+        }
+
+        &--img1 {
+            background: url("../../images/bgr21.png") top center / cover no-repeat;
+            height: 400px;
+        }
+
+        &--img2 {
+            background: url("../../images/bgr24.jpg") bottom center / cover no-repeat;
+            height: 400px;
+        }
+
+        &--img3 {
+            background: url("../../images/bgr23.jpg") top center / cover no-repeat;
+            height: 400px;
+        }
+    }
 
     &__container {
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
-        background-color: #fff;
-        border-radius: 6px;
         margin: 0;
 
         &--tabs {
             background-color: #fff;
             padding-left: 10px;
-            border-radius: 10px;
         }
 
         &--tab {
+            background-color: #fff;
             font-family: "Poppins", sans-serif;
             padding: 0;
-            margin: 0;
+            margin: 40px 0 15px 0;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+            //border-radius: 5px;
+            display: flex;
+            justify-content: center;
 
             &-label {
-                padding: 30px 0;
                 font-size: 36px;
                 text-align: center;
-                font-style: italic;
-                color: #f10b0b;
+                color: #555;
             }
 
             &-title {
@@ -94,8 +121,6 @@
             }
 
             &-content {
-                padding: 28px 0;
-
                 &-pane {
                     color: #333;
                     display: none;
@@ -115,123 +140,121 @@
             }
         }
 
-        &--slider {
-            width: 10%;
-            overflow: hidden;
-            padding: 0;
+        &--content {
+            background-color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+            //border-radius: 10px;
+            margin-top: 25px;
 
-            &-slides {
-                width: 500%;
-                display: flex;
+            .group-image {
+                padding: 5px;
 
-                input {
-                    display: none;
+                &-1st {
+                    background: url("../../images/DC5.jpeg") center / cover no-repeat;
+                    padding-top: 20%;
                 }
 
-                #radio1:checked ~ .first{
-                    margin-left: 0;
+                &-2nd {
+                    background: url("../../images/DC9.jpeg") center / cover no-repeat;
+                    padding-top: 20%;
                 }
 
-                #radio1:checked ~ .homePage__container--slider-slides-navigation 
-                .homePage__container--slider-slides-navigation-btn1 {
-                   background: rgb(13, 228, 95);
+                &-3rd {
+                    background: url("../../images/DC7.jpeg") center / cover no-repeat;
+                    padding-top: 20%;
                 }
 
-                #radio2:checked ~ .first{
-                    margin-left: -20%;
+                &-4th {
+                    background: url("../../images/DC2.jpeg") center / cover no-repeat;
+                    padding-top: 20%;
                 }
 
-                #radio2:checked ~ .homePage__container--slider-slides-navigation 
-                .homePage__container--slider-slides-navigation-btn2 {
-                   background: rgb(13, 228, 95);
+                &-5th {
+                    background: url("../../images/DC10.jpeg") center / cover no-repeat;
+                    padding-top: 20%;
                 }
 
-                #radio3:checked ~ .first{
-                    margin-left: -40%;
+                &-6th {
+                    background: url("../../images/DC1.jpeg") center / cover no-repeat;
+                    padding-top: 20%;
                 }
 
-                #radio3:checked ~ .homePage__container--slider-slides-navigation 
-                .homePage__container--slider-slides-navigation-btn3 {
-                   background: rgb(13, 228, 95);
+                &-7th {
+                    background: url("../../images/DC4.jpg") center / cover no-repeat;
+                    padding-top: 20%;
                 }
 
-                #radio4:checked ~ .first{
-                    margin-left: -60%;
+                &-8th {
+                    background: url("../../images/DC3.jpeg") center / cover no-repeat;
+                    padding-top: 20%;
                 }
 
-                #radio4:checked ~ .homePage__container--slider-slides-navigation 
-                .homePage__container--slider-slides-navigation-btn4 {
-                   background: rgb(13, 228, 95);
+                &-9th {
+                    background: url("../../images/DC8.jpeg") center / cover no-repeat;
+                    padding-top: 20%;
                 }
-
-                #radio5:checked ~ .first{
-                    margin-left: -80%;
-                }
-
-                #radio5:checked ~ .homePage__container--slider-slides-navigation 
-                .homePage__container--slider-slides-navigation-btn5 {
-                   background: rgb(13, 228, 95);
-                }
-
-                &-slide {
-                    width: 20%;
-                    transition: 2s;
-
-                    &-1 {
-                        border-radius: 10px;
-                        padding-top: 100%;
-                        background: url(../../images/DC11.jpg) top center / cover no-repeat;
-                    }
-                    
-                    &-2 {
-                        border-radius: 10px;
-                        padding-top: 100%;
-                        background: url(../../images/DC66.jpg) top center / cover no-repeat;
-                    }
-
-                    &-3 {
-                        border-radius: 10px;
-                        padding-top: 100%;
-                        background: url(../../images/DC666.jpg) top center / cover no-repeat;
-                    }
-
-                    &-4 {
-                        border-radius: 10px;
-                        padding-top: 100%;
-                        background: url(../../images/DC6.jpg) top center / cover no-repeat;
-                    }
-
-                    &-5 {
-                        border-radius: 10px;
-                        padding-top: 100%;
-                        background: url(../../images/DC13.jpg) top center / cover no-repeat;
-                    }
-
-                }
-
-                &-navigation {
-                    width: 100%;
-                    position: absolute;
-                    display: flex;
-                    justify-content: center;
-                    padding-top: 100%;
-                    margin-top: -15px;
-                   
-
-                    div {
-                        border: 2px solid #40D3DC;
-                        padding: 5px;
-                        border-radius: 10px;
-                        transition: 1s;
-                    }
-
-                    div:not(:last-child) {
-                        margin-right: 40px;
-                    }
-                }
-                
             }
         }
+
+        &--warning {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+
+            &-content {
+
+                .warning-header {
+
+                    &-title {
+                        text-align: center;
+                        color: #e71515;
+                        font-weight: 500;
+                        margin: 5px 0;
+                    }
+
+                    &-title2 {
+                        font-size: 18px;
+                        font-weight: 400;
+                        text-align: center;
+                        margin-bottom: 10px;
+                    }
+
+                    &-title3 {
+                        font-size: 18px;
+                        font-weight: 500;
+                        text-align: center;
+                        margin-bottom: 10px;
+                    }
+
+                    &-title4 {
+                        font-size: 18px;
+                        font-weight: 400;
+                        text-align: center;
+                        margin-bottom: 10px;
+                    }
+
+                    &-title5 {
+                        font-size: 19px;
+                        font-weight: 700;
+                        text-align: center;
+                        margin-bottom: 15px;
+
+                        &-contact {
+                            font-size: 17px;
+                            font-weight: 700;
+                            margin-top: 6px;
+                        }
+                    }
+                }
+
+                .warning-container {
+
+                }
+            }
+        }
+
     }
 }
 
@@ -252,7 +275,8 @@
             }
         }
         &-content {
-            padding: 28px 0 0 0;
+            padding: 20px 0 20px 0;
+
             &-pane {
                 margin: 0 30px 0 20px;
             }
@@ -266,32 +290,26 @@
         }
     }
 
-    .homePage__container--slider-slides-slide {
-        margin: 20px 0 40px 0;
-
-        &-1 {
-            margin: 0 20px;
-        }
-        &-2 {
-            margin: 0 20px;
-        }
-        &-3 {
-            margin: 0 20px;
-        }
-        &-4 {
-            margin: 0 20px;
-        }
+    .warning-header-title {
+        font-size: 36px;
     }
 
-    .homePage__banner {
-        height: 95px;
-        font-size: 18px;
-        padding-top: 20px;
-        margin-top: 65%;
-    }
 }
 
 @media (max-width: 599px) {
+
+    .homePage__bgr--img1 {
+        height: 300px;
+    }
+
+    .homePage__bgr--img2 {
+        background: url("../../images/bgr22.jpg") bottom center / cover no-repeat;
+        height: 300px;
+    }
+
+    .homePage__bgr--img3 {
+        height: 300px;
+    }
 
     .homePage__container--tabs {      
         margin-top: 20px;
@@ -299,8 +317,7 @@
 
     .homePage__container--tab {
         &-label {
-            padding: 10px 0;
-            font-size: 28px;
+            font-size: 26px;
         }
         &-title {      
             margin-right: 6px;
@@ -324,35 +341,8 @@
         }
     }
 
-    .homePage__container--slider-slides-slide {
-        margin: 0 0 40px 0;
-
-        &-1 {
-            margin: 0 10px;
-        }
-        &-2 {
-            margin: 0 10px;
-        }
-        &-3 {
-            margin: 0 10px;
-        }
-        &-4 {
-            margin: 0 10px;
-        }
+    .warning-header-title {
+        font-size: 26px;
     }
 
-    .homePage__container--slider-slides-navigation {
-        margin-top: -35px;
-
-        div:not(:last-child) {
-            margin-right: 30px;
-        }
-    }
-
-    .homePage__banner {
-        height: 85px;
-        font-size: 14px;
-        padding-top: 18px;
-        margin-top: 80%;
-    }
 }

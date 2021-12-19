@@ -39,16 +39,16 @@ const UserRecordContainer = () => {
                             <div className="recordPage__container--menu-items-value col-8">{user.phoneNumber}</div>
                         </div>
                         <div className="recordPage__container--menu-items">
-                            <div className="recordPage__container--menu-items-label col-4">Mã thành viên</div>
-                            <div className="recordPage__container--menu-items-value col-8">{user._id}</div>
-                        </div>
-                        <div className="recordPage__container--menu-items">
                             <div className="recordPage__container--menu-items-label col-4">Giới tính</div>
                             <div className="recordPage__container--menu-items-value col-8">{user.gender}</div>
                         </div>
                         <div className="recordPage__container--menu-items">
                             <div className="recordPage__container--menu-items-label col-4">Ngày sinh</div>
                             <div className="recordPage__container--menu-items-value col-8">{user.dateOfBirth}</div>
+                        </div>
+                        <div className="recordPage__container--menu-items">
+                            <div className="recordPage__container--menu-items-label col-4">Địa chỉ</div>
+                            <div className="recordPage__container--menu-items-value col-8">{user.address}</div>
                         </div>
                         <div className="recordPage__container--menu-items" style={{ display: 'flex', justifyContent: 'center' }}>
                             <button className="recordPage__container--menu-items-btn" onClick={() => { setEditUserModalVisible(true) }}>

@@ -88,12 +88,12 @@ const EditPost = (props) => {
         }
 
         valueData._id = post._id
-        valueData.name = value.name
-        valueData.description = value.description
-        valueData.brand = value.brand
-        valueData.type = value.type
+        valueData.name = value.name ? value.name : post.name
+        valueData.description = value.description ? value.description : post.description
+        valueData.brand = value.brand ? value.brand : post.brand
+        valueData.type = value.type ? value.type : post.type
         valueData.owner_id = user._id
-        valueData.amount = Number(value.quantity)
+        valueData.amount = Number(value.amount) ? Number(value.amount) : Number(post.amount)
         valueData.image_url = value.image_url
 
         editPost(valueData)

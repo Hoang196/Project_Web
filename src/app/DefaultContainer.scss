@@ -21,9 +21,15 @@
         padding: 0;
       }
 
+      li:first-child {
+        .fa-home {
+          margin-right: 5px;
+        }
+      }
+
       li:hover > a {
-        background-color: #ccc;
-        color: #000;
+        background-color: rgb(104, 97, 97);
+        color: #fff;
       } 
 
       &-link {
@@ -33,19 +39,24 @@
         text-transform: uppercase;
         line-height: 48px;
         font-size: 14px;
+        font-weight: 500;
         padding: 0 30px;
       }
     }
   }
   .content {
-    padding-top: 56px;
+    padding-top: 76px;
     padding-bottom: 30px;
     width: 100%;
   }
 }
 
 .active {
-  background-color: rgb(104, 97, 97);
+  background-color: #ccc;
+
+  .header__navbar--menu-link {
+    color: #000;
+  }
 }
 
 //FAQ
@@ -120,28 +131,34 @@
 
       &-search {
         display: flex;
+        //display: none;
         align-items: center;
         justify-content: flex-end;
-        width: 35%;
+        width: 30%;
 
-        &-input {
-          padding: 7px 20px;
-          width: 80%;
-          border: none;
-          border-top-left-radius: 20px;
-          border-bottom-left-radius: 20px;
+        &-group {
+          background-color: #fff;
+          border-radius: 20px;
+
+          &-input {
+            padding: 6px 20px;
+            border: none;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+          }
+
+          .fa-search {
+            padding: 0 12px;
+          }
+
+          &-input:focus-visible {
+            outline: none;
+            border: 1px solid #40D3DC;
+          }
+
         }
 
-        &-input:focus-visible {
-          outline: none;
-          border-bottom: 0.1px solid #40D3DC;
-          border-top: 0.1px solid #40D3DC;
-          border-left: 0.1px solid #40D3DC;
-        }
 
-        &-input:focus-visible + &-btn {
-          border: 0.1px solid #40D3DC;
-        }
 
         &-btn {
           height: 36px;

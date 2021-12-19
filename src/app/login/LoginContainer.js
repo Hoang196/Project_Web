@@ -42,7 +42,7 @@ const LoginContainer = () => {
                 })
             }
         } else {
-            const { data, success } = await registerApi(user.email, user.username, user.password, user.phone_number, user.gender, user.dob)
+            const { data, success } = await registerApi(user.email, user.username, user.password, user.phone_number, user.gender, user.dob, user.address)
             if (success) {
                 if (data.data.status_code === 200) {
                     onSubmit(user)
@@ -68,7 +68,8 @@ const LoginContainer = () => {
                     password: newUser.id,
                     phone_number: "Chưa có",
                     gender: "Chưa có",
-                    dob: "Chưa có"
+                    dob: "Chưa có",
+                    address: "Chưa có"
                 }
                 // console.log("ndhh", user)
                 handleSignIn(user);
@@ -93,10 +94,11 @@ const LoginContainer = () => {
                     password: newUser.id,
                     phone_number: "Chưa có",
                     gender: "Chưa có",
-                    dob: "Chưa có"
+                    dob: "Chưa có",
+                    address: "Chưa có"
                 }
-                console.log("ndhh", user)
-                // handleSignIn(user);
+                // console.log("ndhh", user)
+                handleSignIn(user);
             })
             .catch((err) => {
                 notification.error({
