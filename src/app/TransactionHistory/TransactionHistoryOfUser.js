@@ -79,7 +79,7 @@ const TransactionHistoryOfUser = (props) => {
 
     return (
         <div className="trans-his-page">
-            <div className={"trans-his-container col-xl-10 col-12"}>
+            <div className={"trans-his-container col-xl-10 col-11"}>
                 <div className={"trans__header"}>
                     <form className="form-inline trans__header--search" onSubmit={(e) => onSearch(e)}
                           onChange={(key) => onchange(key)}>

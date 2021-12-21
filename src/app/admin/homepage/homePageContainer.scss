@@ -122,7 +122,7 @@
   padding: 10px 16px;
 }
 
-.card-header button {
+.card-header .card-header-button {
   padding: 5px 8px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -131,7 +131,7 @@
   font-size: 14px;
 }
 
-.card-header button:hover {
+.card-header .card-header-button:hover {
   background-color: #2FBE8E;
 }
 

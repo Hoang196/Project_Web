@@ -22,6 +22,7 @@
 
         .carousel {
             padding: 0;
+            //border-bottom: 1px solid #ccc;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
         }
 
@@ -141,9 +142,9 @@
         }
 
         &--content {
+            display: none;
             background-color: #fff;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
-            //border-radius: 10px;
+            //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
             margin-top: 25px;
 
             .group-image {
@@ -197,7 +198,7 @@
         }
 
         &--warning {
-            margin-top: 40px;
+            margin-top: 27px;
             display: flex;
             justify-content: center;
             background-color: #fff;

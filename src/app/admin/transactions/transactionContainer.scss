@@ -55,22 +55,32 @@
     .trans-Admin-his-container {
       margin-top: 60px;
     }
+    .trans-Admin-his-content {
+      overflow-x: auto;
+    }
     .trans-Admin-his-content-mobile {
-      font-size: 9px;
+      font-size: 13px;
+      line-height: 32px;
+      min-width: 180px;
     }
     .trans-Admin__header--search-input {
       width: 500px;
     }
   }
   
-  @media (max-width: 739px) {
+  @media (max-width: 740px) {
     .trans-Admin-his-container{
       margin-top: 60px;
     }
+    .trans-Admin-his-content {
+      overflow-x: auto;
+    }
     .trans-Admin-his-content-mobile {
-      font-size: 5px;
+      font-size: 13px;
+      line-height: 32px;
+      min-width: 160px;
     }
     .trans-Admin__header--search-input {
-      width: 200px;
+      width: 210px;
     }
   }

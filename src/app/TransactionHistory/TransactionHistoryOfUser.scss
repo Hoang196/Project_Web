@@ -62,19 +62,28 @@
   .trans-his-container{
     margin-top: 10px;
   }
+  .trans-his-content {
+    overflow-x: auto;
+  }
   .trans-his-content-mobile {
-    font-size: 10px;
+    font-size: 12px;
+    min-width: 170px;
   }
 }
 
 @media (max-width: 739px) {
   .trans__header--search-input {
-    width: 230px;
+    width: 210px;
   }
   .trans-his-container{
     margin-top: 10px;
   }
+  .trans-his-content {
+    overflow-x: auto;
+  }
   .trans-his-content-mobile {
-    font-size: 6px;
+    font-size: 12px;
+    line-height: 32px;
+    min-width: 160px;
   }
 }

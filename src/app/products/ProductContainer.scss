@@ -41,6 +41,9 @@
   }
   
   @media (max-width: 767px) {
+    .product__page {
+      padding: 0 6px;
+    }
     .product__page-container {
         padding: 5px;
     }

@@ -28,7 +28,7 @@ const UserListContainer = (props) => {
                     username: dataUsersBase[i].username,
                     phoneNumber: dataUsersBase[i].phoneNumber,
                     gender: dataUsersBase[i].gender,
-                    dateOfBirth: dataUsersBase[i].dateOfBirth,
+                    address: dataUsersBase[i].address,
                 });
             }
             setData(dataUsers)
@@ -46,7 +46,7 @@ const UserListContainer = (props) => {
                     username: dataUsersBase[i].username,
                     phoneNumber: dataUsersBase[i].phoneNumber,
                     gender: dataUsersBase[i].gender,
-                    dateOfBirth: dataUsersBase[i].dateOfBirth,
+                    address: dataUsersBase[i].address,
                 });
             }
         }
@@ -60,7 +60,7 @@ const UserListContainer = (props) => {
 
     const { Column } = Table;
     return (
-        <div className={"container-fluid mt-3 user__base col-12 col-lg-10"}>
+        <div className={"container-fluid mt-3 user__base col-11 col-lg-10"}>
 
             <div className={"user__header"}>
                 <form className="form-inline user__header--search" onSubmit={(e) => onSearch(e)}
@@ -71,13 +71,13 @@ const UserListContainer = (props) => {
                 </form>
             </div>
 
-            <div className={"user__container col-12 col-lg-12"}>
+            <div className={"user__container col-12"}>
                 <Table dataSource={Data} pagination={{ pageSize: 8 }} className="user-table-mobile">
                     <Column title="Email" dataIndex="email" key="email" className="user-table-mobile" />
                     <Column title="Tên người dùng" dataIndex="username" key="username" className="user-table-mobile" />
                     <Column title="Phone Number" dataIndex="phoneNumber" key="phoneNumber" className="user-table-mobile" />
-                    {/*<Column title="Gender" dataIndex="gender" key="gender" className="user-table-mobile" />*/}
-                    {/* <Column title="Date Of Birth" dataIndex="dateOfBirth" key="dateOfBirth" className="user-table-mobile" /> */}
+                    <Column title="Giới tính" dataIndex="gender" key="gender" className="user-table-mobile" />
+                     <Column title="Địa chỉ" dataIndex="address" key="address" className="user-table-mobile" />
                     <Column
                         title="Hoạt động"
                         key="action"

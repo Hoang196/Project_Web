@@ -29,7 +29,7 @@ const UserListContainerAdmin = (props) => {
                     username: dataUsersBase[i].username,
                     phoneNumber: dataUsersBase[i].phoneNumber,
                     gender: dataUsersBase[i].gender,
-                    dateOfBirth: dataUsersBase[i].dateOfBirth,
+                    address: dataUsersBase[i].address,
                 });
             }
             setData(dataUsers)
@@ -47,7 +47,7 @@ const UserListContainerAdmin = (props) => {
                     username: dataUsersBase[i].username,
                     phoneNumber: dataUsersBase[i].phoneNumber,
                     gender: dataUsersBase[i].gender,
-                    dateOfBirth: dataUsersBase[i].dateOfBirth,
+                    address: dataUsersBase[i].address,
                 });
             }
         }
@@ -96,9 +96,10 @@ const UserListContainerAdmin = (props) => {
                     <Column title="Email" dataIndex="email" key="email" className="userAdmin-table-mobile" />
                     <Column title="Tên người dùng" dataIndex="username" key="username" className="userAdmin-table-mobile" />
                     <Column title="Phone Number" dataIndex="phoneNumber" key="phoneNumber" className="userAdmin-table-mobile" />
-                    <Column title="Gender" dataIndex="gender" key="gender" className="userAdmin-table-mobile" />
+                    <Column title="Giới tính" dataIndex="gender" key="gender" className="userAdmin-table-mobile" />
+                    <Column title="Địa chỉ" dataIndex="address" key="address" className="userAdmin-table-mobile" />
                     <Column
-                        title="Action"
+                        title="Hoạt động"
                         key="action"
                         render={(text, record) => (
                             <Space size="middle">
@@ -116,7 +117,7 @@ const UserListContainerAdmin = (props) => {
                                 </Tooltip>
                             </Space>
                         )}
-                        className="user-table-mobile"
+                        className="userAdmin-table-mobile"
                     />
                 </Table>
             </div>

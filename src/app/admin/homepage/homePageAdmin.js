@@ -95,7 +95,7 @@ const homePageAdmin = () => {
                             <div className="card">
                                 <div className="card-header">
                                     <h2>Recent Project</h2>
-                                    <button> See all <i className="fas fa-arrow-right" /> </button>
+                                    <button className="card-header-button"> See all <i className="fas fa-arrow-right" /> </button>
                                 </div>
                                 <div className="card-body">
                                     <div className="table-responsive">
@@ -200,7 +200,7 @@ const homePageAdmin = () => {
                             <div className="card">
                                 <div className="card-header">
                                     <h2>New customer</h2>
-                                    <button> See all <i className="fas fa-arrow-right" /> </button>
+                                    <button className="card-header-button"> See all <i className="fas fa-arrow-right" /> </button>
                                 </div>
                                 <div className="card-body">
 
