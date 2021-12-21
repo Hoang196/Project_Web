@@ -69,17 +69,22 @@ const TransactionContainer = (props) => {
         setData(dataTransSearch)
     }
 
+    const onSearch = (e) => {
+        e.preventDefault()
+    }
+
     const { Column } = Table;
 
     return (
         <div className={"trans-Admin-his-container"}>
+
             <div className={"trans-Admin__header"}>
-                <div className={"trans-Admin__header--search"}>
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Tìm kiếm</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Default" placeholder="Nhập tên người dùng hoặc sản phẩm" onChange={(event) => onchange(event)} />
-                </div>
+                <form className="form-inline trans-Admin__header--search" onSubmit={(e) => onSearch(e)}
+                      onChange={(key) => onchange(key)}>
+                    <input className="trans-Admin__header--search-input" type="search" placeholder="Nhập tên người dùng hoặc sản phẩm"
+                           aria-label="Search"/>
+                    <button className="trans-Admin__header--search-btn" type="submit" >Tìm kiếm</button>
+                </form>
             </div>
 
             <div className={"trans-Admin-his-content"}>

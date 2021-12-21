@@ -1,0 +1,253 @@
+.homePageAdmin {
+  padding: 0;
+  margin-top: 10px;
+}
+
+.homePageAdmin--content {
+  padding: 0;
+}
+
+.homePageAdmin--header {
+  background-color: #fff;
+}
+
+.homePageAdmin-navbar {
+  display: flex;
+  border: 1px solid #ccc;
+
+  &-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #555;
+    padding: 8px 0 15px 20px;
+    text-transform: uppercase;
+
+    .fa-tasks {
+      margin-right: 10px;
+    }
+  }
+
+  &-search {
+    display: flex;
+    //display: none;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+
+    &-group {
+      background-color: #fff;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+
+      &-input {
+        padding: 6px 20px;
+        border: none;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+
+      .fa-search {
+        padding: 7px 12px;
+      }
+
+      &-input:focus-visible {
+        outline: none;
+      }
+
+    }
+
+  }
+}
+
+.homePageAdmin--container {
+  padding: 0;
+  margin-top: 20px;
+
+  &-quantity {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+  }
+}
+
+.homePageAdmin-quantity-group {
+  background-color: #fff;
+  width: 22%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.homePageAdmin-quantity-title {
+
+  &-number {
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  &-name {
+    font-size: 16px;
+    color: #999999;
+    font-weight: 500;
+  }
+}
+
+.homePageAdmin-quantity-icon {
+  font-size: 30px;
+  color: #019160;
+}
+
+.recent-grid {
+  margin-top: 30px;
+  padding: 0 30px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 65% auto;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.card-header,
+.card-body {
+  padding: 0;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.card-header button {
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #019160;
+  font-size: 14px;
+}
+
+.card-header button:hover {
+  background-color: #2FBE8E;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+thead tr {
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+thead td {
+  font-weight: 700;
+}
+
+td {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #222;
+}
+
+td .status {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.status.purple {
+  background-color: rebeccapurple;
+}
+
+.status.pink {
+  background-color: deeppink;
+}
+
+.status.orange {
+  background-color: orangered;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.customer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8.8px 16px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.info img {
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.info h4 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #222;
+}
+
+.info small {
+  font-weight: 500;
+}
+
+.contact i {
+  font-size: 16px;
+  display: inline-block;
+  margin-left: 8px;
+  color: #019160;
+}
+
+@media (min-width: 701px) and (max-width: 1199px) {
+  .homePageAdmin {
+    margin-top: 60px;
+  }
+  .recent-grid {
+    grid-template-columns: 56% auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .homePageAdmin {
+    margin-top: 60px;
+  }
+  .homePageAdmin-navbar {
+    &-title {
+      font-size: 20px;
+    }
+    &-search {
+      display: none;
+    }
+  }
+  .homePageAdmin--container-quantity {
+    display: block;
+    padding: 0 0 5px 0;
+  }
+  .homePageAdmin-quantity-group {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .customers {
+    margin-top: 20px;
+  }
+  .recent-grid {
+    display: block;
+    margin-top: 20px;
+    padding: 0;
+  }
+}

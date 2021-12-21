@@ -14,6 +14,7 @@ import PostDetailContainer from "../app/postDetail/PostDetailContainer";
 import UserRecordContainer from "../app/userRecord/UserRecordContainer";
 import TransactionHistoryOfUser from "../app/TransactionHistory/TransactionHistoryOfUser"
 import AdminContainer from "../app/admin/AdminContainer";
+import homePageAdmin from "../app/admin/homepage/homePageAdmin";
 import ProductContainerAdmin from "../app/admin/products/productContainer";
 import UserListContainerAdmin from "../app/admin/userList/userListContainer";
 import TransactionContainer from "../app/admin/transactions/transactionContainer";
@@ -52,6 +53,11 @@ const router = [
                 path: paths.Admin,
                 component: AdminContainer,
                 routes: [
+                    {
+                        path: paths.homepage,
+                        exact: true,
+                        component: homePageAdmin
+                    },
                     {
                         path: paths.product,
                         exact: true,

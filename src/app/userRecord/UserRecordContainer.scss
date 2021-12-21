@@ -1,14 +1,13 @@
 .record-button {
-    background-color: #fff;
-    color: #000;
+    background-color: #019160;
+    color: #fff;
     padding: 1px 60px 3px 60px;
     border: 1px solid #ccc;
     margin-top: 20px;
 }
 
 .record-button:hover {
-    background-color: #ccc;
-    color: #000;
+    background-color: #2FBE8E;
     border: 1px solid #ccc;
 }
 
@@ -17,6 +16,7 @@
     border-radius: 5px;
     padding: 0 33px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    margin-top: 10px;
 
     &__header {
         padding: 0;

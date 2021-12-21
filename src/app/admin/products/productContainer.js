@@ -45,9 +45,9 @@ const ProductContainerAdmin = (props) => {
     }
 
     return (
-        <div className={"productAdmin__page container-fluid mt-3 col-12"}>
-            <div className={"productAdmin__page-container mt-3"}>
-                <div className={"productAdmin__page-container-search mt-3"}>
+        <div className={"productAdmin__page container-fluid col-12"}>
+            <div className={"productAdmin__page-container"}>
+                <div className={"productAdmin__page-container-search"}>
                     <Search
                         placeholder="Tìm kiếm sản phẩm"
                         allowClear

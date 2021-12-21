@@ -9,7 +9,7 @@
 
 .admin__navbar {
   background-color: #fff;
-  margin: 15px 0 30px 0;
+  margin: 10px 0 30px 0;
   padding: 1px;
   border: 0.5px solid #ccc;
 
@@ -33,6 +33,30 @@
     li {
       padding: 0;
       color: #000;
+
+      .fa-home {
+        margin: 0 10px 0 25px;
+      }
+
+      .fa-product-hunt {
+        margin: 0 11px 0 27px;
+      }
+
+      .fa-users {
+        margin: 0 9px 0 25px;
+      }
+
+      .fa-sync-alt {
+        margin: 0 11px 0 27px;
+      }
+
+      .fa-user {
+        margin: 0 12px 0 27px;
+      }
+
+      .fa-sign-out-alt {
+        margin: 0 12px 0 27px;
+      }
     }
 
     li:hover > a{
@@ -41,6 +65,7 @@
     }
 
     &-link {
+      text-align: left;
       display: inline-block;
       width: 100%;
       text-transform: uppercase;
@@ -87,16 +112,24 @@
   ////////////////////////////////////////////////////////////////////////////////////////////////
   
 @media (max-width: 1199px) {
+  .adminPage {
+    padding: 0;
+  }
   .admin__navbar {
     overflow: hidden;
-
-    &--search {
-      display: none;
-    }
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    z-index: 10;
+    height: 46px;
 
     &--menu {
       display: block;
       padding: 0;
+
+      &-logo {
+        display: none;
+      }
   
       li > a {
         padding-left: 26px;

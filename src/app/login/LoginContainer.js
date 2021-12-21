@@ -114,8 +114,8 @@ const LoginContainer = () => {
         if (success) {
             if (data.data.status_code === 200) {
                 setUser(data.data.user)
-                if (data.data.user.admin === true) {
-                    window.location.href = paths.product
+                if (data.data.user.exist === "ADMIN") {
+                    window.location.href = paths.homepage
                 } else {
                     window.location.href = paths.HomePage
                 }

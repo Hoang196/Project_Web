@@ -1,21 +1,38 @@
 .userAdmin__base {
   width: 100%;
-  border-radius: 5px;
   background: #fff;
   padding: 20px 15px;
   border: 0.5px solid #ccc;
+  margin-top: 10px;
   // margin: 0 15px;
   // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   .userAdmin__header {
-    margin-top: 20px;
-    width: 100%;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
 
     &--search {
-      display: flex;
-      align-items: center;
+      &-input {
+        padding: 7px 12px;
+        border: 1px solid #ccc;
+      }
+
+      &-input:focus-visible {
+        outline: #40D3DC auto 0.1px;
+      }
+
+      &-btn {
+        background-color: #ccc;
+        color: #000;
+        padding: 8px 12px;
+        border: none;
+      }
+
+      &-btn:hover {
+        background-color: orangered;
+        color: #fff;
+      }
     }
   }
 
@@ -28,33 +45,43 @@
   }
 }
 
-@media (min-width: 740px) {
+@media (min-width: 1199px) {
   .userAdmin__container {
     padding: 0 10px;
   }
-  .userAdmin__header--title {
-    margin-right: 10px;
-    margin-top: 3px;
-    font-size: large;
+  .userAdmin__header--search-input {
+    width: 700px;
   }
-  .userAdmin__header--search {
-    width: 70%;
+}
+
+@media (min-width: 740px) and (max-width: 1199px) {
+  .userAdmin__base {
+    margin-top: 60px;
+  }
+  .userAdmin__container {
+    padding: 0 10px;
+  }
+  .userAdmin__header--search-input {
+    width: 500px;
   }
 }
 
 @media (max-width: 739px) {
+  .userAdmin__base {
+    margin-top: 60px;
+  }
   .userAdmin__container {
     padding: 0;
   }
   .userAdmin-table-mobile {
-    font-size: 4.6px;
+    font-size: 6.6px;
   }
   .userAdmin__header--title {
     margin-right: 6px;
     margin-top: 8px;
     font-size: 12px;
   }
-  .userAdmin__header--search {
-    width: 95%;
+  .userAdmin__header--search-input {
+    width: 200px;
   }
 }

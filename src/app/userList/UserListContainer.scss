@@ -51,11 +51,6 @@
     padding: 0 10px;
     margin-top: 40px;
   }
-  .user__header--title {
-    margin-right: 10px;
-    margin-top: 3px;
-    font-size: large;
-  }
 }
 
 @media (min-width: 701px) and (max-width: 1199px) {
@@ -68,11 +63,6 @@
     padding: 0 10px;
     margin-top: 40px;
   }
-  .user__header--title {
-    margin-right: 10px;
-    margin-top: 3px;
-    font-size: large;
-  }
 }
 
 @media (max-width: 700px) {
@@ -82,11 +72,6 @@
   }
   .user-table-mobile {
     font-size: 8px;
-  }
-  .user__header--title {
-    margin-right: 6px;
-    margin-top: 8px;
-    font-size: 12px;
   }
   .user__header--search-input {
     width: 230px;

@@ -4,6 +4,7 @@ const basePath = '/u'
 const paths = {
     FirstDirect: '/',
     Admin: `${basePath}/admin`,
+    homepage: `${basePath}/admin/home_page`,
     product: `${basePath}/admin/list_product`,
     userList: `${basePath}/admin/list_user`,
     transaction: `${basePath}/admin/list_transaction`,

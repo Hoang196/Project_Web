@@ -14,19 +14,23 @@ const AdminContainer = ({ route }) => {
 
     useEffect(() => {
         if (_.isEmpty(user)) window.location.href = "/login"
-        if (user.admin !== true) {
+        if (user.exist !== "ADMIN") {
             window.location.href = paths.HomePage
         }
     })
 
     const clickMenu = () => {
         let header = document.getElementById('admin');
-        let isClose = header.clientHeight === 48;
+        let isClose = header.clientHeight === 45;
+
+        console.log("ndh", isClose, " ", header.clientHeight)
 
         if (isClose) {
-            header.style.height = '340px';
+            header.style.height = '302px';
+            console.log("ndh 302", header.style.height)
         } else {
-            header.style.height = '48px';
+            header.style.height = '46px';
+            console.log("ndh 46", header.style.height)
         }
     }
 
@@ -37,22 +41,29 @@ const AdminContainer = ({ route }) => {
 
                     <ul className="admin__navbar--menu col-xl-12 col-10">
                         <div className="admin__navbar--menu-logo">
-                            <div className="admin__navbar--menu-logo-img"></div>
+                            <div className="admin__navbar--menu-logo-img"/>
                         </div>
+                        <li className={window.location.pathname === paths.homepage ? "admin_active" : ""}>
+                            <a className="admin__navbar--menu-link" href={paths.homepage}> <i className="fas fa-home" /> Trang chủ</a>
+                        </li>
                         <li className={window.location.pathname === paths.product ? "admin_active" : ""}>
-                            <a className="admin__navbar--menu-link" href={paths.product}>Sản phẩm</a>
+                            <a className="admin__navbar--menu-link" href={paths.product}> <i className="fab fa-product-hunt" /> Sản phẩm</a>
                         </li>
                         <li className={window.location.pathname === paths.userList ? "admin_active" : ""}>
-                            <a className="admin__navbar--menu-link" href={paths.userList}>Người dùng</a>
+                            <a className="admin__navbar--menu-link" href={paths.userList}>
+                                <i className="fas fa-users"/> Người dùng</a>
                         </li>
                         <li className={window.location.pathname === paths.transaction ? "admin_active" : ""}>
-                            <a className="admin__navbar--menu-link" href={paths.transaction}>Giao dịch</a>
+                            <a className="admin__navbar--menu-link" href={paths.transaction}>
+                                <i className="fas fa-sync-alt" /> Giao dịch</a>
                         </li>
                         <li className={window.location.pathname === paths.UserInfo ? "admin_active" : ""}>
-                            <a className="admin__navbar--menu-link" href={paths.UserInfo}>Tài khoản</a>
+                            <a className="admin__navbar--menu-link" href={paths.UserInfo}>
+                                <i className="fas fa-user" /> Tài khoản</a>
                         </li>
                         <li className={window.location.pathname === paths.Login ? "admin_active" : ""}>
-                            <a className="admin__navbar--menu-link" onClick={() => { removeLocalStorage("user") }} href={paths.Login}>Đăng xuất</a>
+                            <a className="admin__navbar--menu-link" onClick={() => { removeLocalStorage("user") }} href={paths.Login}>
+                                <i className="fas fa-sign-out-alt" /> Đăng xuất</a>
                         </li>
                     </ul>
 
@@ -62,7 +73,7 @@ const AdminContainer = ({ route }) => {
 
                 </div>
 
-                <div className={"admin__content col-xl-10"}>
+                <div className={"admin__content col-xl-10 col-12"}>
                     {renderRoutes(route.routes)}
                 </div>
             </div>
