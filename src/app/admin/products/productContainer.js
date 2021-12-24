@@ -81,7 +81,7 @@ const ProductContainerAdmin = (props) => {
                             renderItem={post => {
                                 return (
                                     <List.Item>
-                                        <PostDisplayCardAdmin isChoosing={false} postData={post} />
+                                        <PostDisplayCardAdmin postData={post} />
                                     </List.Item>
                                 )
                             }}

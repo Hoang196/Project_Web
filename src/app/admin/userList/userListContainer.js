@@ -3,15 +3,19 @@ import "./userListContainer.scss"
 import paths from "../../../router/paths";
 import 'antd/dist/antd.css';
 import { Table, Space } from "antd";
-import { getAllUserData, deleteUser } from "../../../services/api/getUserData";
+import { getAllUserData, deleteUser, getUserDataById } from "../../../services/api/getUserData";
 import { notification, Tooltip } from "antd";
-import { DoubleRightOutlined, DeleteOutlined } from '@ant-design/icons';
+import {DoubleRightOutlined, DeleteOutlined, ToolOutlined} from '@ant-design/icons';
+import UserRecord from "../../userRecord/UserRecord";
+import {getPostDataByUserId} from "../../../services/api/PostData";
 
 let dataUsersBase;
 let dataUsers = [];
 
 const UserListContainerAdmin = (props) => {
     const [Data, setData] = useState([])
+    const [userSelected, setUserSelected] = useState({})
+    const [editUserModalVisible, setEditUserModalVisible] = useState(false)
 
     useEffect(() => {
         getAllUser()
@@ -51,7 +55,6 @@ const UserListContainerAdmin = (props) => {
                 });
             }
         }
-        console.log("ndh22", dataUserSearch)
         setData(dataUserSearch)
     }
 
@@ -71,6 +74,14 @@ const UserListContainerAdmin = (props) => {
                     description: data.data.detail
                 })
             }
+        }
+    }
+
+    const exitRecord = async (id) => {
+        const { data, success } = await getUserDataById(id)
+        if (success) {
+            setUserSelected(data.data)
+            setEditUserModalVisible(true)
         }
     }
 
@@ -110,6 +121,11 @@ const UserListContainerAdmin = (props) => {
                                         }} />
                                     </span>
                                 </Tooltip>
+                                <Tooltip title={"Sửa thông tin người dùng"} placement={"bottom"}>
+                                    <span className="mx-1 post-action-btn" onClick={() => { exitRecord(record.id)}}>
+                                        <ToolOutlined style={{ color: "black", fontSize: "14px", marginBottom: "6px" }} />
+                                    </span>
+                                </Tooltip>
                                 <Tooltip title={"Xóa người dùng"} placement={"bottom"}>
                                     <span className="mx-1 post-action-btn" onClick={() => { unavailableUser(record.id) }}>
                                         <DeleteOutlined style={{ color: "red", fontSize: "14px", marginBottom: "6px" }} />
@@ -121,7 +137,7 @@ const UserListContainerAdmin = (props) => {
                     />
                 </Table>
             </div>
-
+            <UserRecord userData={userSelected} visible={editUserModalVisible} setVisible={setEditUserModalVisible} />
         </div>
     )
 }

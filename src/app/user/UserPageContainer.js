@@ -101,7 +101,8 @@ const UserPageContainer = (props) => {
                             <h5 className={"user__page-container-header-title"}>
                                 Danh sách các bài đăng:
                             </h5>
-                            <Button className={"user__page-container-header-btn"} disabled={user._id === userDataId ? false : true}
+                            <Button className={"user__page-container-header-btn"}
+                                    disabled={!(user._id === userDataId || user.exist === "ADMIN")}
                                 type={"primary"} size={"large"} onClick={() => setNewPostModalVisible(true)}>
                                 Tạo bài đăng mới
                             </Button>

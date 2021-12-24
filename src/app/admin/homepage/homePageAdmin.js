@@ -206,7 +206,7 @@ const homePageAdmin = () => {
 
                                     <div className="customer">
                                         <div className="info">
-                                            <img src="../../../images/avatar.png" alt="" style={{width: "40px", height: "40px"}}/>
+                                            <span>H</span>
                                             <div>
                                                 <h4>Nguyen Duc Hoang</h4>
                                                 <small>CEO Excerpt</small>
@@ -221,9 +221,9 @@ const homePageAdmin = () => {
 
                                     <div className="customer">
                                         <div className="info">
-                                            <img src="../../../images/avatar.png" alt="" style={{width: "40px", height: "40px"}}/>
+                                            <span>D</span>
                                             <div>
-                                                <h4>Nguyen Duc Hoang</h4>
+                                                <h4>Pham Viet Duy</h4>
                                                 <small>CEO Excerpt</small>
                                             </div>
                                         </div>
@@ -236,9 +236,9 @@ const homePageAdmin = () => {
 
                                     <div className="customer">
                                         <div className="info">
-                                            <img src="../../../images/avatar.png" alt="" style={{width: "40px", height: "40px"}}/>
+                                            <span>B</span>
                                             <div>
-                                                <h4>Nguyen Duc Hoang</h4>
+                                                <h4>Trinh Thanh Binh</h4>
                                                 <small>CEO Excerpt</small>
                                             </div>
                                         </div>
@@ -251,9 +251,9 @@ const homePageAdmin = () => {
 
                                     <div className="customer">
                                         <div className="info">
-                                            <img src="../../../images/avatar.png" alt="" style={{width: "40px", height: "40px"}}/>
+                                            <span>A</span>
                                             <div>
-                                                <h4>Nguyen Duc Hoang</h4>
+                                                <h4>Pham Duy Anh</h4>
                                                 <small>CEO Excerpt</small>
                                             </div>
                                         </div>
@@ -266,9 +266,9 @@ const homePageAdmin = () => {
 
                                     <div className="customer">
                                         <div className="info">
-                                            <img src="../../../images/avatar.png" alt="" style={{width: "40px", height: "40px"}}/>
+                                            <span>C</span>
                                             <div>
-                                                <h4>Nguyen Duc Hoang</h4>
+                                                <h4>Nguyen Quoc Cuong</h4>
                                                 <small>CEO Excerpt</small>
                                             </div>
                                         </div>
@@ -281,9 +281,9 @@ const homePageAdmin = () => {
 
                                     <div className="customer">
                                         <div className="info">
-                                            <img src="../../../images/avatar.png" alt="" style={{width: "40px", height: "40px"}}/>
+                                            <span>T</span>
                                             <div>
-                                                <h4>Nguyen Duc Hoang</h4>
+                                                <h4>Pham Chien Truong</h4>
                                                 <small>CEO Excerpt</small>
                                             </div>
                                         </div>
@@ -296,9 +296,9 @@ const homePageAdmin = () => {
 
                                     <div className="customer">
                                         <div className="info">
-                                            <img src="../../../images/avatar.png" alt="" style={{width: "40px", height: "40px"}}/>
+                                            <span>Y</span>
                                             <div>
-                                                <h4>Nguyen Duc Hoang</h4>
+                                                <h4>Hoang Thu Yen</h4>
                                                 <small>CEO Excerpt</small>
                                             </div>
                                         </div>

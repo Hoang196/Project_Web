@@ -93,14 +93,14 @@ const PostDetailAdmin = (props) => {
                                     {/* eslint-disable-next-line no-undef */}
                                     <div onClick={props.ownerPost === user._id ? () => clickAccept(record.transactionId) : null}>
                                         <Tooltip title={"Chấp nhận đổi"}>
-                                            <InteractionOutlined style={props.ownerPost === user._id ?
+                                            <InteractionOutlined style={props.ownerPost === user._id || user.exist === "ADMIN" ?
                                                 { color: "green", cursor: "pointer", fontSize: "16px" } : { color: "gray", fontSize: "16px" }} />
                                         </Tooltip>
                                     </div>
                                     <div onClick={record.ownerId === user._id || props.ownerPost === user._id ?
                                         () => clickDelete(record.transactionId) : null}>
                                         <Tooltip title={"Xóa yêu cầu"}>
-                                            <DeleteOutlined style={record.ownerId === user._id || props.ownerPost === user._id ?
+                                            <DeleteOutlined style={record.ownerId === user._id || props.ownerPost === user._id || user.exist === "ADMIN" ?
                                                 { color: "red", cursor: "pointer", fontSize: "16px" } : { color: "gray", fontSize: "16px" }} />
                                         </Tooltip>
                                     </div>

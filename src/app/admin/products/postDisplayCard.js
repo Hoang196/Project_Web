@@ -1,19 +1,18 @@
 import React, { useContext, useState } from 'react'
 import { notification, Tooltip } from "antd";
 import "../../products/component/PostDisplayCard.scss"
-import { DoubleRightOutlined, DeleteOutlined } from '@ant-design/icons';
+import {DoubleRightOutlined, DeleteOutlined, ToolOutlined} from '@ant-design/icons';
 import paths from "../../../router/paths";
 import AppContext from "../../../AppContext";
 import UserListPostModal from "../../user/component/UserListPostModal";
 import { deletePost } from "../../../services/api/PostData";
+import EditPost from "../../post/EditPost";
 
 const PostDisplayCardAdmin = (props) => {
     const { user } = useContext(AppContext)
     const post = props.postData
-    const isChoosing = props.isChoosing
-    const isSelected = props.isSelected
-    const setPostSelected = props.setPostSelected
     const [modalUserPostVisible, setModalUserPostVisible] = useState(false)
+    const [editPostModalVisible, setEditPostModalVisible] = useState(false)
 
     const unavailablePost = async (id) => {
         if (window.confirm('Bạn đồng ý xóa sản phẩm này?')) {
@@ -35,15 +34,19 @@ const PostDisplayCardAdmin = (props) => {
     }
 
     return (
-        <div className={post._id !== isSelected ? "post-card-item-card" : "post-card-item-card selected-post"}
-            onClick={isChoosing ? () => { setPostSelected(post._id) } : null}>
+        <div className={"post-card-item-card"}>
             <Tooltip title={"Sản phẩm có sẵn"}>
                 <img className={"post-card-image"} src={post.main_image} alt={"Can't load this img"} />
             </Tooltip>
             <div className={"post-card-item-card__text-wrapper"}>
                 <h2 className={"post-card-item-card-title"}>{post.name} </h2>
-                {!isChoosing ? <div className={"post-card-item-card__text-details-wrapper"}>
+                <div className={"post-card-item-card__text-details-wrapper"}>
 
+                    <Tooltip title={"Sửa thông tin sản phẩm"} placement={"bottom"}>
+                        <span className="mx-1 post-action-btn" onClick={() => { setEditPostModalVisible(true) }}>
+                            <ToolOutlined style={{ color: "black", fontSize: "20px" }} />
+                        </span>
+                    </Tooltip>
                     <Tooltip title={"Xóa sản phẩm"} placement={"bottom"}>
                         <span className="mx-1 post-action-btn" onClick={() => { unavailablePost(post._id) }}>
                             <DeleteOutlined style={{ color: "red", fontSize: "20px" }} />
@@ -57,9 +60,10 @@ const PostDisplayCardAdmin = (props) => {
                         </span>
                     </Tooltip>
 
-                </div> : <div />}
+                </div>
             </div>
             <UserListPostModal postIdTo={post._id} userIdTo={post.owner_id} visible={modalUserPostVisible} setVisible={setModalUserPostVisible} user={user} />
+            <EditPost postData={post} newPostId={post._id} visible={editPostModalVisible} setVisible={setEditPostModalVisible} />
         </div>
     )
 }

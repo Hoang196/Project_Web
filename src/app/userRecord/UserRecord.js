@@ -54,7 +54,7 @@ const UserRecord = (props) => {
     return (
         <Modal
             visible={props.visible}
-            title={`Chỉnh sửa thông tin của bạn`}
+            title={`Thay đổi thông tin người dùng`}
             onCancel={() => props.setVisible(false)}
             footer={null}
             width={"800px"}

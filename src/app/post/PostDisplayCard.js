@@ -50,15 +50,16 @@ const PostDisplayCard = (props) => {
                 {!isChoosing ? <div className={"post-card-item-card__text-details-wrapper"}>
 
                     <Tooltip title={isOwner ? "Sửa thông tin sản phẩm" : "Vô hiệu hóa với bạn"} placement={"bottom"}>
-                        <span className="mx-1 post-action-btn" onClick={isOwner ? () => { setEditPostModalVisible(true) } : null}>
-                            <ToolOutlined className={!isOwner ? "disable-action-btn" : ""}
+                        <span className="mx-1 post-action-btn"
+                              onClick={isOwner || user.exist === "ADMIN" ? () => { setEditPostModalVisible(true) } : null}>
+                            <ToolOutlined className={isOwner || user.exist === "ADMIN" ? "" : "disable-action-btn"}
                                 style={{ color: "black", fontSize: "20px" }} />
                         </span>
                     </Tooltip>
 
                     <Tooltip title={isOwner ? "Xóa sản phẩm" : "Vô hiệu hóa với bạn"} placement={"bottom"}>
-                        <span className="mx-1 post-action-btn" onClick={isOwner ? () => { unavailablePost(post._id) } : null}>
-                            <DeleteOutlined className={!isOwner ? "disable-action-btn" : ""}
+                        <span className="mx-1 post-action-btn" onClick={isOwner || user.exist === "ADMIN" ? () => { unavailablePost(post._id) } : null}>
+                            <DeleteOutlined className={isOwner || user.exist === "ADMIN" ? "" : "disable-action-btn"}
                                 style={{ color: "red", fontSize: "20px" }} />
                         </span>
                     </Tooltip>
