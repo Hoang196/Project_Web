@@ -8,6 +8,7 @@ import "./UserPageContainer.scss"
 import { getUserDataById } from "../../services/api/getUserData";
 import { getPostDataByUserId, getPostOfUserBySearch } from "../../services/api/PostData";
 import { getPostDataByUserIdFake } from "../../services/api/PostData";
+import CommentContainer from "../comment/CommentContainer";
 
 const { Search } = Input;
 
@@ -148,6 +149,9 @@ const UserPageContainer = (props) => {
                 </div>
                 <div className={"user__page-container-userInfo mt-3 col-xl-3 col-12"} >
                     <UserInfoContainer user={userData} isOwner={isOwner} />
+                </div>
+                <div className="user__page-container-comment col-12">
+                    <CommentContainer user={userData}/>
                 </div>
             </div>
             <UploadPost newPostId={newPostId} visible={newPostModalVisible} setVisible={setNewPostModalVisible} />

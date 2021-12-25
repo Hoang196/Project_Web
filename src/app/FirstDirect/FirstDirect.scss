@@ -51,19 +51,24 @@
             display: inline-block;
 
             &-link {
-              font-size: 18px;
+              font-size: 16px;
               font-weight: 700;
               text-transform: uppercase;
               line-height: 52px;
-              color: #333;
+              color: #999999;
+            }
+
+            .basePage-active {
+              color: #000;
             }
 
             &-link:hover {
               text-decoration: none;
-              color: #e71515;
-              border-bottom: 5px solid #ccc;
+              color: #333;
+              opacity: 0.8;
             }
           }
+
         }
 
         &-items2 {
@@ -85,7 +90,7 @@
             display: inline-block;
 
             &-link {
-              font-size: 16px;
+              font-size: 15px;
               font-weight: 700;
               line-height: 52px;
               color: #333;
@@ -475,7 +480,7 @@
     }
 
     &--products {
-      padding-top: 15px;
+      padding: 35px 20px 20px 20px;
       border: 0.1px solid rgb(226, 223, 223);
       background-color: #fff;
       border-radius: 10px;
@@ -591,6 +596,16 @@
 
 @media (min-width: 1200px) {
   .basePage__header--menu {
+    padding: 5px 0;
+    &-logo-img {
+      height: 55px;
+      width: 55px;
+    }
+
+    &-logo-name {
+      font-size: 34px;
+    }
+
     &-icon {
       display: none;
     }
@@ -626,6 +641,7 @@
             display: block;
             padding-left: 30px;
             border-bottom: 1px solid #ccc;
+            opacity: 1;
 
             &-link {
               font-size: 16px;
@@ -746,6 +762,7 @@
             display: block;
             padding-left: 30px;
             border-bottom: 1px solid #ccc;
+            opacity: 1;
 
             &-link {
               font-size: 16px;

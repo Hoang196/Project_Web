@@ -158,8 +158,6 @@
 
         }
 
-
-
         &-btn {
           height: 36px;
           border: none;
@@ -194,10 +192,14 @@
           h1 {
             margin: 0;
             padding: 8px 14px;
-            background-color: rgb(62, 133, 62);
+            background-color: #019160;
             color: #fff;
             font-size: 20px;
             border-radius: 50%;
+          }
+
+          h1:hover {
+            background-color: #2FBE8E;
           }
 
         }

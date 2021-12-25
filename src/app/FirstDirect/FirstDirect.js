@@ -80,7 +80,7 @@ const FirstDirect = () => {
 
                             <ul className="basePage__header--menu-list-items1">
                                 <li className="basePage__header--menu-list-items1-field">
-                                    <a href="/login" className="basePage__header--menu-list-items1-field-link">Trang chủ</a>
+                                    <a href="/login" className="basePage__header--menu-list-items1-field-link basePage-active">Trang chủ</a>
                                 </li>
                                 <li className="basePage__header--menu-list-items1-field">
                                     <a href="/info" className="basePage__header--menu-list-items1-field-link">Giới thiệu</a>
@@ -285,13 +285,13 @@ const FirstDirect = () => {
                     <div className="basePage__container--products col-xl-9 col-11">
                         <List
                             grid={{
-                                gutter: 10,
+                                gutter: 20,
                                 xs: 3,
                                 sm: 3,
                                 md: 3,
                                 lg: 4,
-                                xl: 6,
-                                xxl: 6,
+                                xl: 4,
+                                xxl: 5,
                             }}
                             dataSource={postData}
                             renderItem={post => {

@@ -1,0 +1,33 @@
+.commentPage {
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  margin-top: 25px;
+  border-radius: 5px;
+
+  &__header {
+    h2 {
+      padding: 6px;
+      color: #333;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+    .ant-row, .ant-form-item {
+      margin-bottom: 12px;
+    }
+    .ant-btn-primary {
+      background-color: #019160;
+      padding: 0 24px;
+      border-color: #ccc;
+    }
+    .ant-btn-primary:hover {
+      background-color: #2FBE8E;
+    }
+  }
+
+  &__container {
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+}
