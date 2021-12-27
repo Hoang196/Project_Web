@@ -142,59 +142,42 @@
         }
 
         &--content {
-            display: none;
+            //display: none;
             background-color: #fff;
-            //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
             margin-top: 25px;
 
             .group-image {
+                display: flex;
+                justify-content: center;
                 padding: 5px;
 
                 &-1st {
-                    background: url("../../images/DC5.jpeg") center / cover no-repeat;
-                    padding-top: 20%;
+                    background: url("../../images/DC10.jpeg") center / cover no-repeat;
+                    padding-top: 23%;
                 }
 
                 &-2nd {
-                    background: url("../../images/DC9.jpeg") center / cover no-repeat;
-                    padding-top: 20%;
+                    background: url("../../images/DC3.jpeg") center / cover no-repeat;
+                    padding-top: 23%;
                 }
 
                 &-3rd {
-                    background: url("../../images/DC7.jpeg") center / cover no-repeat;
-                    padding-top: 20%;
-                }
+                    padding: 0;
+                    height: 100%;
 
-                &-4th {
-                    background: url("../../images/DC2.jpeg") center / cover no-repeat;
-                    padding-top: 20%;
-                }
+                    &-first {
+                        background: url("../../images/DC9.jpg") bottom center / cover no-repeat;
+                        padding-top: 35%;
+                    }
 
-                &-5th {
-                    background: url("../../images/DC10.jpeg") center / cover no-repeat;
-                    padding-top: 20%;
-                }
-
-                &-6th {
-                    background: url("../../images/DC1.jpeg") center / cover no-repeat;
-                    padding-top: 20%;
-                }
-
-                &-7th {
-                    background: url("../../images/DC4.jpg") center / cover no-repeat;
-                    padding-top: 20%;
-                }
-
-                &-8th {
-                    background: url("../../images/DC3.jpeg") center / cover no-repeat;
-                    padding-top: 20%;
-                }
-
-                &-9th {
-                    background: url("../../images/DC8.jpeg") center / cover no-repeat;
-                    padding-top: 20%;
+                    &-second {
+                        background: url("../../images/DC8.jpg") center / cover no-repeat;
+                        padding-top: 35%;
+                    }
                 }
             }
+
         }
 
         &--warning {
@@ -250,9 +233,6 @@
                     }
                 }
 
-                .warning-container {
-
-                }
             }
         }
 

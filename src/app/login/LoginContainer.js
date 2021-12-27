@@ -7,6 +7,7 @@ import firebase from "../firebase/index";
 import "./LoginContainer.scss";
 import paths from "../../router/paths";
 import ValidatorLogin from "./ValidatorLogin";
+import {Link} from "react-router-dom";
 
 const LoginContainer = () => {
 
@@ -159,7 +160,7 @@ const LoginContainer = () => {
                             <span className="login-form-message" />
                         </div>
 
-                        <a className="login-form-changePass" href={"/login"} onClick={() => { alert("Tính năng đang được bảo trì") }}>Quên mật khẩu?</a>
+                        <Link className="login-form-changePass" to={"/login"} onClick={() => { alert("Tính năng đang được bảo trì") }}>Quên mật khẩu?</Link>
 
                         <button className="login-form-submit">Đăng nhập</button>
                     </form>
@@ -187,7 +188,7 @@ const LoginContainer = () => {
 
                 <hr />
                 <div className={"login__footer"}>
-                    Bạn chưa có tài khoản? <a className="login-form-font" href={"/register"}>Đăng ký ngay</a>
+                    Bạn chưa có tài khoản? <Link className="login-form-font" to={"/register"}>Đăng ký ngay</Link>
                 </div>
             </div>
         </div>

@@ -73,6 +73,19 @@ const HomePageContainer = () => {
             </div>
 
             <div className="homePage__container">
+                <div className="homePage__container--content col-xl-10 col-12">
+                    <div className="group-image row">
+                        <div className="group-image-1st col-4" />
+                        <div className="group-image-2nd col-4" />
+                        <div className="group-image-3rd col-4">
+                            <div className="group-image-3rd-first col-12"/>
+                            <div className="group-image-3rd-second col-12"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="homePage__container">
                 <div className="homePage__container--tab col-xl-10 col-12">
                     <div className="col-12 col-xl-11">
                         <div className="homePage__container--tabs">
@@ -112,22 +125,6 @@ const HomePageContainer = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="homePage__container">
-                <div className="homePage__container--content col-xl-10 col-12">
-                    <div className="group-image row">
-                        <div className="group-image-1st col-3" />
-                        <div className="group-image-2nd col-3" />
-                        <div className="group-image-3rd col-3" />
-                        <div className="group-image-4th col-3" />
-                        <div className="group-image-5th col-4" />
-                        <div className="group-image-6th col-4" />
-                        <div className="group-image-7th col-4" />
-                        <div className="group-image-8th col-6" />
-                        <div className="group-image-9th col-6" />
                     </div>
                 </div>
             </div>

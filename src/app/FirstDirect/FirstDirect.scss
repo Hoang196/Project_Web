@@ -597,6 +597,11 @@
 @media (min-width: 1200px) {
   .basePage__header--menu {
     padding: 5px 0;
+
+    &-list-items1-field-link {
+      line-height: 55px;
+    }
+
     &-logo-img {
       height: 55px;
       width: 55px;
@@ -645,6 +650,7 @@
 
             &-link {
               font-size: 16px;
+              color: #000;
             }
 
             &-link:hover {
@@ -678,7 +684,7 @@
 
             &-link {
               font-size: 16px;
-              font-weight: 500;
+              font-weight: 700;
               text-transform: uppercase;
             }
           }
@@ -766,6 +772,8 @@
 
             &-link {
               font-size: 16px;
+              color: #000;
+
             }
 
             &-link:hover {
@@ -799,7 +807,7 @@
 
             &-link {
               font-size: 16px;
-              font-weight: 500;
+              font-weight: 700;
               text-transform: uppercase;
             }
           }

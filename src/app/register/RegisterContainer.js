@@ -4,6 +4,7 @@ import "./RegisterContainer.scss"
 import 'antd/dist/antd.css';
 import { registerApi } from "../../services/api/AccountApi";
 import ValidatorRegister from './ValidatorRegister';
+import {Link} from "react-router-dom";
 
 
 const RegisterForm = () => {
@@ -110,7 +111,7 @@ const RegisterForm = () => {
 
                 <hr />
                 <div className={"register__footer"}>
-                    Bạn đã có tài khoản? <a className="register-form-font" href={"/login"}>Đăng nhập ngay</a>
+                    Bạn đã có tài khoản? <Link className="register-form-font" to={"/login"}>Đăng nhập ngay</Link>
                 </div>
             </div>
         </div>
