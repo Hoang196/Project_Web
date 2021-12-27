@@ -151,7 +151,7 @@ const UserPageContainer = (props) => {
                     <UserInfoContainer user={userData} isOwner={isOwner} />
                 </div>
                 <div className="user__page-container-comment col-12">
-                    <CommentContainer user={userData}/>
+                    <CommentContainer userId={userDataId}/>
                 </div>
             </div>
             <UploadPost newPostId={newPostId} visible={newPostModalVisible} setVisible={setNewPostModalVisible} />

@@ -191,11 +191,15 @@
 
           h1 {
             margin: 0;
-            padding: 8px 14px;
+            height: 40px;
+            width: 40px;
             background-color: #019160;
-            color: #fff;
-            font-size: 20px;
+            color: #FFFFFF;
+            font-size: 18px;
             border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
 
           h1:hover {

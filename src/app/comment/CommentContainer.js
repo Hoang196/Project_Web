@@ -1,40 +1,51 @@
 import React, {useContext, useEffect, useState} from "react";
 // import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
-import {List, Avatar, Space, Form, Input, Upload, Button, notification} from 'antd';
-import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
+import {List, Space, Form, Input, Button, notification} from 'antd';
+import {MessageOutlined, LikeOutlined, DislikeOutlined, DeleteOutlined, EditOutlined} from '@ant-design/icons';
 import "./CommentContainer.scss"
-import {createComment, getCommentByUserId} from "../../services/api/Comment";
+import {addEmoticon, createComment, deleteComment, getCommentByUserId} from "../../services/api/Comment";
 import AppContext from "../../AppContext";
 import paths from "../../router/paths";
+import {getUserDataById} from "../../services/api/getUserData";
+
+let checkLike = false
+let checkDislike = false
 
 const CommentContainer = (props) => {
 
-    const [listComment, setListComment] = useState([])
-    const [checkComment, setCheckComment] = useState(false)
+    const [listComment, setListComment] = useState()
+    const [userData, setUserData] = useState([])
+    const [checkComment, setCheckComment] = useState(1)
     const { user } = useContext(AppContext)
-    const userData = props.user
+    const userDataId = props.userId
 
     useEffect(() => {
+        getUserData()
         getCommentById()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checkComment])
 
+    const getUserData = async () => {
+        const { data, success } = await getUserDataById(userDataId)
+        if (success) {
+            setUserData(data.data)
+        } else {
+            notification.error({
+                message: "Error",
+                description: data.data.detail
+            })
+        }
+    }
+
     const getCommentById = async () => {
-        const {data, success} = await getCommentByUserId(userData._id)
+        const {data, success} = await getCommentByUserId(userDataId)
         if (success) {
             setListComment(data.data)
-            console.log(data.data)
         } else {
             notification.error("Không tìm thấy bình luận nào!")
         }
     }
-
-    const IconText = ({ icon, text }) => (
-        <Space>
-            {React.createElement(icon)}
-            {text}
-        </Space>
-    );
 
     const handleSubmit = async (e) => {
         const comment = {
@@ -42,8 +53,8 @@ const CommentContainer = (props) => {
             userIdTo: userData._id,
             userNameFrom: user.username,
             userNameTo: userData.username,
-            description: e.description,
-            content: e.content
+            description: e.description.trim(),
+            content: e.content.trim()
         }
         const {data, success} = await createComment(comment)
         if (success) {
@@ -52,6 +63,7 @@ const CommentContainer = (props) => {
                     message: "Success",
                     description: data.data.detail,
                 })
+                setCheckComment(checkComment => checkComment + 1)
             }
         } else {
             await notification.error({
@@ -59,7 +71,86 @@ const CommentContainer = (props) => {
                 description: data.data.detail,
             })
         }
-        setCheckComment(!checkComment)
+    }
+
+    const handleDelete = async (id) => {
+        if (window.confirm('Bạn đồng ý xóa bình luận?')) {
+            const {data, success} = await deleteComment(id)
+            if (success) {
+                await notification.success({
+                    message: "Success",
+                    description: data.data.detail,
+                })
+                setCheckComment(checkComment => checkComment + 1)
+            } else {
+                notification.error({
+                    message: "Error",
+                    description: data.data.detail
+                })
+            }
+        }
+    }
+
+    const handleLike = async (item) => {
+        checkLike = true
+        let element = document.getElementById(item._id)
+        let obj
+        const arrayLike = item.numberLike
+        for (let i = 0; i < arrayLike.length; i++) {
+            if (arrayLike[i] === user._id) {
+                obj = {
+                    id: item._id,
+                    userId: user._id,
+                    event: "unlike"
+                }
+                element.style.color = "#999"
+                checkLike = false
+                break
+            }
+        }
+        if (checkLike === true) {
+            obj = {
+                id: item._id,
+                userId: user._id,
+                event: "like"
+            }
+            element.style.color = "blue"
+        }
+        const {data, success} = await addEmoticon(obj)
+        if (success) {
+            setCheckComment(checkComment => checkComment + 1)
+        }
+    }
+
+    const handleDislike = async (item) => {
+        checkDislike = true
+        let element = document.getElementById(item._id + "2")
+        let obj
+        const arrayDislike = item.numberDislike
+        for (let i = 0; i < arrayDislike.length; i++) {
+            if (arrayDislike[i] === user._id) {
+                obj = {
+                    id: item._id,
+                    userId: user._id,
+                    event: "unDislike"
+                }
+                element.style.color = "#999"
+                checkDislike = false
+                break
+            }
+        }
+        if (checkDislike === true) {
+            obj = {
+                id: item._id,
+                userId: user._id,
+                event: "dislike"
+            }
+            element.style.color = "blue"
+        }
+        const {data, success} = await addEmoticon(obj)
+        if (success) {
+            setCheckComment(checkComment => checkComment + 1)
+        }
     }
 
     return (
@@ -117,13 +208,32 @@ const CommentContainer = (props) => {
                         <List.Item
                             key={item.userNameFrom}
                             actions={[
-                                <IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
-                                <IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />,
-                                <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
+                                <Space>
+                                    <LikeOutlined id={item._id}
+                                                  className={item.numberLike.map((id) => {
+                                                      return (id === user._id) ? "icon-text icon-like"  : "icon-text"
+                                                  })}
+                                                  onClick={() => handleLike(item)}/>
+                                    {item.numberLike.length - 1}
+                                </Space>,
+                                <Space>
+                                    <DislikeOutlined id={item._id + "2"}
+                                                     className={item.numberDislike.map((id) => {
+                                                         return (id === user._id) ? "icon-text icon-like"  : "icon-text"
+                                                     })}
+                                                     onClick={() => handleDislike(item)}/>
+                                    {item.numberDislike.length - 1}
+                                </Space>,
+                                <Space>
+                                    <MessageOutlined className="icon-text icon-message"/>
+                                </Space>,
+                                <Space className={user._id === item.userIdFrom || user.exist === "ADMIN" ? "" : "disable-icon"}>
+                                    <DeleteOutlined className="icon-text icon-delete" onClick={() => handleDelete(item._id)}/>
+                                </Space>,
                             ]}
                         >
                             <List.Item.Meta
-                                // avatar={<Avatar src={item.avatar} />}
+                                avatar={<h1 className="avatar-comment">{item.userNameFrom.charAt(0).toUpperCase()}</h1>}
                                 title={<a href={paths.UserPage(item.userIdFrom)}>{item.userNameFrom}</a>}
                                 description={item.description}
                             />
@@ -136,4 +246,4 @@ const CommentContainer = (props) => {
     )
 }
 
-export default CommentContainer
+export default React.memo(CommentContainer)

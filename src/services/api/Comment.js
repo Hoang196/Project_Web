@@ -22,9 +22,9 @@ export const createComment = (data) => {
     })
 }
 
-export const editComment = (data) => {
+export const addEmoticon = (data) => {
     return createApiRequest({
-        url: '/api/edit_comment',
+        url: '/api/add_emoticon',
         method: "POST",
         data: data
     })

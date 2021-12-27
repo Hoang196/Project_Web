@@ -29,5 +29,45 @@
     margin-top: 30px;
     padding: 5px;
     border: 1px solid #ccc;
+
+    .avatar-comment {
+      height: 40px;
+      width: 40px;
+      background-color: #019160;
+      color: #FFFFFF;
+      font-size: 16px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avatar-comment:hover {
+      background-color: #2FBE8E;
+    }
+
+    .icon-text:hover {
+      cursor: pointer;
+    }
+
+    .icon-like {
+      color: blue;
+    }
+
+    .icon-message {
+      color: #333;
+    }
+
+    .icon-edit {
+      color: #000;
+    }
+
+    .icon-delete {
+      color: #e90e0e;
+    }
+
+    .disable-icon {
+      display: none;
+    }
   }
 }
