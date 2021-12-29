@@ -47,25 +47,14 @@
   line-height: 28px;
 }
 
-.group-icon-address {
-  background: url("../../images/address.jpg") top center / cover no-repeat;
-  height: 40px;
-  width: 35px;
-  margin-right: 50px;
-}
-
-.group-icon-email {
-  background: url("../../images/email.png") top center / cover no-repeat;
-  height: 40px;
+.group-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
   width: 50px;
+  font-size: 30px;
   margin-right: 35px;
-}
-
-.group-icon-phone {
-  background: url("../../images/phone.png") top center / cover no-repeat;
-  height: 40px;
-  width: 40px;
-  margin-right: 45px;
 }
 
 @media (min-width: 740px) and  (max-width: 1200px) {
@@ -77,5 +66,10 @@
 @media (max-width: 739px) {
   .contactPage__content {
     width: 90%;
+  }
+
+  .group-icon {
+    height: 40px;
+    width: 40px;
   }
 }

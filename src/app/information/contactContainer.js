@@ -11,21 +11,21 @@ const contactContainer = () => {
                     </div>
                     <div className="contactPage__content--container">
                         <div className="contactPage__content--container-group">
-                            <div className="group-icon-address"/>
+                            <i className="fas fa-map-marker-alt group-icon" />
                             <div className="group-message">
                                 Đại học Công nghệ, 144 Xuân Thủy, Cầu Giấy, Hà Nội. <br />
                                 521 Cổ nhuế, Cổ nhuế 2, Bắc Từ Liêm, Hà Nội.
                             </div>
                         </div>
                         <div className="contactPage__content--container-group">
-                            <div className="group-icon-email"/>
+                            <i className="fas fa-envelope group-icon" />
                             <div className="group-message">
                                 Besttopuet@gmail.com <br />
                                 19020303@vnu.edu.vn
                             </div>
                         </div>
                         <div className="contactPage__content--container-group">
-                            <div className="group-icon-phone"/>
+                            <i className="fas fa-phone group-icon" />
                             <div className="group-message">
                                 0322662828 <br />
                                 0966393939

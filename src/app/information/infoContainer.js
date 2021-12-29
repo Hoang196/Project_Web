@@ -29,7 +29,7 @@ const infoContainer = () => {
                 this.classList.add("active1");
                 pane.classList.add("active2");
             };
-        });
+        })
     }, 500);
 
     return (
